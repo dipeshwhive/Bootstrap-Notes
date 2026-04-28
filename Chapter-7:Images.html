@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter-7:Bootstrap Images</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container mt-5">
+  <div class="container mb-3">
+    <h1>Rounded Corners</h1>
+    <p>The <code>.rounded</code> class adds rounded corners to an image:</p>            
+    <img src="../resources/cinqueterre.jpg" class="rounded" alt="Cinque Terre" width="304" height="236"> 
+  </div>
+  <div class="container mb-3">
+    <h1>Circle</h1>
+    <p>The <code>.rounded-circle</code> class shapes the image to a circle:</p>            
+    <img src="../resources/cinqueterre.jpg" class="rounded-circle" alt="Cinque Terre" width="304" height="236"> 
+  </div>
+  <div class="container mb-3">
+    <h1>Thumbnail</h1>
+    <p>The <code>.img-thumbnail</code> class creates a thumbnail of the image:</p>            
+    <img src="../resources/cinqueterre.jpg" class="img-thumbnail" alt="Cinque Terre" width="304" height="236"> 
+  </div>
+  <div class="container mb-3">
+    <h1>Aligning images</h1>
+    <p>Use the float classes to float the image to the left or to the right:</p> 
+    <img src="../resources/paris.jpg" class="float-start" alt="Paris" width="304" height="236"> 
+    <img src="../resources/paris.jpg" class="float-end" alt="Paris" width="304" height="236"> 
+  </div>
+  <div class="container mb-3">
+    <h1>Centered Image</h1>
+    <p>Center an image by adding the utility classes <code>.mx-auto (margin:auto)</code> and <code>.d-block (display:block)</code> to the image:</p> 
+    <img src="../resources/paris.jpg" class="mx-auto d-block" style="width:50%"> 
+  </div>
+  <div class="container mt-3">
+    <h1>Image</h1>
+    <p>The <code>.img-fluid</code> class makes the image scale nicely to the parent element. The <code>.img-fluid</code> class applies <code>max-width:100%;</code> and <code>height: auto;</code> to the image:</p>
+    <img class="img-fluid" src="../resources/ny.jpg" alt="New York" width="1100" height="500"> 
+  </div>
+</body>
+</html>
