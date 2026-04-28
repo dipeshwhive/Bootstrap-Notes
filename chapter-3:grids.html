@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale-1.0">
+    <title>Bootstrap 5 Grids</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <style>
+    .ex-1 div{
+      border: 2px solid green;
+      background-color:red;
+    }
+    .ex-2 div{
+      border:2px solid red;
+      background-color:green;
+      color:white;
+    }
+  </style>
+  <body class="container-lg">
+    <p>Bootstrap's grid system is built with flexbox and allows up to 12 columns across the page.</p>
+    <ul>
+      <h2>Grid Classes</h2>
+      <p>The Bootstrap grid system has six classes:</p>
+      <li>.col- (extra small devices - screen width less than 576px)</li>
+      <li>.col-sm- (small devices - screen width equal to or greater than 576px)</li>
+      <li>.col-md- (medium devices - screen width equal to or greater than 768px)</li>
+      <li>.col-lg- (large devices - screen width equal to or greater than 992px)</li>
+      <li>.col-xl- (xlarge devices - screen width equal to or greater than 1200px)</li>
+      <li>.col-xxl- (xxlarge devices - screen width equal to or greater than 1400px)</li> 
+    </ul>
+
+    <h2>Example 1</h2>
+    <p>The following example shows how to create three equal-width columns, on all devices and screen widths:</p>
+    <div class="row ex-1">
+      <div class="col">.col</div>
+      <div class="col">.col</div>
+      <div class="col">.col</div>
+      <div class="col">.col</div>
+    </div>
+
+    <h2>Example 2</h2>
+    <p>The following example shows how to get two various-width columns starting at tablets and scaling to larger extra desktops:</p>
+    <div class="row ex-2">
+      <div class="col-sm-4">.col-sm-4</div>
+      <div class="col-sm-8">.col-sm-8</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Containers</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      table, th, td{
+        border:1px solid black;
+      }
+      table{
+        border-collapse: collapse;
+      }
+    </style>
+  </head>
+  <body class="container-lg">
+    <p>You can also use the <span style="color:red">.container-sm|md|lg|xl</span> classes to determine when the container should be responsive.</p>
+    <p>The <span style="color:red;">max-width</span> of the container will change on different screen sizes/viewports:</p>
+    <table>
+      <tr>
+        <th>Class</th>
+        <th>Extra small &lt; 576px</th>
+        <th>Small &ge; 576px</th>
+        <th>Medium &ge; 768px</th>
+        <th>Large &ge; 992px</th>
+        <th>Extra Large &ge; 1200px</th>
+        <th>XXL &ge; 1400px</th>
+      </tr>
+      <tr>
+        <td>.container-sm</td>
+        <td>100%</td>
+        <td>540px</td>
+        <td>720px</td>
+        <td>960px</td>
+        <td>1140px</td>
+        <td>1320px</td>
+      </tr>
+      <tr>
+        <td>.container-md</td>
+        <td>100%</td>
+        <td>100%</td>
+        <td>720px</td>
+        <td>960px</td>
+        <td>1140px</td>
+        <td>1320px</td>
+      </tr>
+      <tr>
+        <td>.container-lg</td>
+        <td>100%</td>
+        <td>100%</td>
+        <td>100%</td>
+        <td>960px</td>
+        <td>1140px</td>
+        <td>1320px</td>
+      </tr>
+      <tr>
+        <td>.container-xl</td>
+        <td>100%</td>
+        <td>100$</td>
+        <td>100%</td>
+        <td>100%</td>
+        <td>1140px</td>
+        <td>1320px</td>
+      </tr>
+      <tr>
+        <td>.container-xxl</td>
+        <td>100%</td>
+        <td>100%</td>
+        <td>100%</td>
+        <td>100%</td>
+        <td>100%</td>
+        <td>1320px</td>
+      </tr>
+    </table>
+  </body>
+</html>
