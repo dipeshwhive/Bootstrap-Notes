@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 10:Bootstrap 5 Buttons</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body class="container mt-5">
+    <h1>Bootstrap 5 Buttons</h1>
+    <div class="container mt-3">
+      <h2>Button Styles</h2>
+      <button type="button" class="btn">Basic</button>
+      <button type="button" class="btn btn-primary">Primary</button>
+      <button type="button" class="btn btn-secondary">Secondary</button>
+      <button type="button" class="btn btn-success">Success</button>
+      <button type="button" class="btn btn-info">Info</button>
+      <button type="button" class="btn btn-warning">Warning</button>
+      <button type="button" class="btn btn-danger">Danger</button>
+      <button type="button" class="btn btn-dark">Dark</button>
+      <button type="button" class="btn btn-light">Light</button>
+      <button type="button" class="btn btn-link">Link</button>  
+      <p>The button classes can be used on <code>&lt;a&gt;</code>, <code>&lt;button&gt;</code>, or <code>&lt;input&gt;</code> elements.</p>    
+    </div>
+    <div class="container mt-3">
+      <h2>Button Outline</h2>
+      <p>Bootstrap 5 also provides eight outline/bordered buttons. Move the mouse over them to see an additional "hover" effect:</p>
+      <button type="button" class="btn btn-outline-primary">Primary</button>
+      <button type="button" class="btn btn-outline-secondary">Secondary</button>
+      <button type="button" class="btn btn-outline-success">Success</button>
+      <button type="button" class="btn btn-outline-info">Info</button>
+      <button type="button" class="btn btn-outline-warning">Warning</button>
+      <button type="button" class="btn btn-outline-danger">Danger</button>
+      <button type="button" class="btn btn-outline-dark">Dark</button>
+      <button type="button" class="btn btn-outline-light text-dark">Light</button>
+    </div>
+    <div class="container mt-3">
+      <h2>Button Sizes</h2>
+      <p>Use the <code>.btn-lg</code> class for large buttons or <code>.btn-sm</code> for small buttons:</p>
+      <button type="button" class="btn btn-primary btn-lg">Large</button>
+      <button type="button" class="btn btn-primary btn-md">Default</button>    
+      <button type="button" class="btn btn-primary btn-sm">Small</button>
+    </div>
+    <div class="container mt-3">
+      <h2>Block Level Buttons</h2>
+      <p>A block level button spans the full width of its parent element.</p>
+      <p>In Bootstrap 5, you can create a full-width button by placing it inside a container with the <code>.d-grid</code> class.</p>
+      <p>The <code>.d-gird</code> class creates a grid container that allows the button to stretch across the entire width.</p>
+      <div class="d-grid">
+        <button type="button" class="btn btn-primary">Full-Width Button</button>
+      </div>
+    </div>
+    <div class="container mt-3">
+      <p>A button can be set to an active (appear pressed) state using the class <code>.active</code> The <code>disabled</code> attribute makes a button unclickable. Note that <code>&lt;a&gt;</code> elements do not support the disabled attribute and must therefore use the <code>.disabled</code> class to make it visually appear disabled.</p>
+      <div class="container mt-3">
+        <h2>Button States</h2>
+        <button type="button" class="btn btn-primary">Primary Button</button>
+        <button type="button" class="btn btn-primary active">Active Primary</button>
+        <button type="button" class="btn btn-primary" disabled>Disabled Primary</button>
+        <a href="#" class="btn btn-primary disabled">Disabled Link</a>
+      </div>
+      <div class="container mt-3">
+        <h2>Spinner Buttons</h2>
+        <p>You can also add "spinners" to a button.</p>
+        <button class="btn btn-primary">
+          <span class="spinner-border spinner-border-sm"></span>
+        </button>
+
+        <button class="btn btn-primary">
+          <span class="spinner-border spinner-border-sm"></span>
+          Loading..
+        </button>
+        
+        <button class="btn btn-primary" disabled>
+          <span class="spinner-border spinner-border-sm"></span>
+          Loading..
+        </button>
+        
+        <button class="btn btn-primary" disabled>
+          <span class="spinner-grow spinner-grow-sm"></span>
+          Loading..
+        </button>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
