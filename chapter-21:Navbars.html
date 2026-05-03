@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 21: Navbars</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body class="container mt-5">
+    <h1>Navigation Bar</h1>
+    <p>A navigation bar is a navigation header that is placed at the top of the page:</p>
+    <nav class="navbar navbar-expand-sm bg-light">
+      <div class="container-fluid">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link 1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link 2</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link 3</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <p>With Bootstrap, a navigation bar can extend or collapse, depending on the screen size.</p>
+    <p>A standard navigation bar is created with the <code>.navbar</code> class, followed by a responsive collapsing class: <code>.navbar-expand-xxl|lx|lg|md|sm</code> (stacks the navbar vertically on xxlarg, extra large, large, medium or small screens).</p>
+    <p>To add links inside the navbar, use either an <code>&lt;ul&gt;</code> element (or a <code>&lt;div&gt;</code>) with <code>class="navbar-nav"</code>. Then add <code>&lt;li&gt;</code> elements with a <code>.nav-item</code> class followed by an <code>&lt;a&gt;</code> element with a <code>.nav-link</code> class.</p>
+
+    <h2 class="mt-3">Vertical Navbar</h2>
+    <p>Remove the <code>.navbar-expand-*</code> class to create a navigation bar that will always be vertical:</p>
+    <nav class="navbar bg-light">
+      <div class="container-fluid">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link 1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link 2</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link 3</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <h2 class="mt-3">Centered Navbar</h2>
+    <p>Add the <code>.justify-content-center</code> class to center the navigation bar:</p>
+    <nav class="navbar navbar-expand-sm bg-light justify-content-center">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link 1</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link 2</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link 3</a>
+        </li>
+      </ul>
+    </nav>
+
+    <h2 class="mt-3">Colored Navbar</h2>
+    <p>Use any of the <code>.bg-color</code> classes to change the background color of the navbar <code>(.bg-primary, .bg-success, etc.)</code>.</p>
+    <p><strong>Tip:</strong>Add a <strong>white</strong> text color to all links in the navbar with the <code>.navbar-dark</code> class, or use the <code>.navbar-light</code> class to add a <code>black</code> text color.</p>
+
+    <nav class="navbar navbar-expand-sm bg-light navbar-light">
+      <div class="container-fluid">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Active</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Disabled</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+      <div class="container-fluid">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Active</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Disabled</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="mt-3">
+      <p class="text-bg-dark p-3">Add the <code>.active</code> class to an <code>&lt;a&gt;</code> element to highlight the current link, or the <code>.disabled</code> class to indicate that the link is un-clickable.</p>
+    </div>
+
+    <h2 class="mt-3">Brand / Logo</h2>
+    <p>The <code>.navbar-brand</code> class is used to highlight the brand/logo/project name of your page:</p>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Logo</a>
+      </div>
+    </nav>
+    <p>When using the <code>.navbar-brand</code> class with images, Bootstrap 5 will automatically style the image to fit the navbar vertically.</p>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="./resources/img_avatar1.png" alt="Logo" style="width:40px;" class="rounded-pill">
+        </a>
+      </div>
+    </nav>
+
+    <h2 class="mt-3">Navbar Text</h2>
+    <p>Use the <code>.navbar-text</code> class to vertical align any elements inside the navbar that are not links (ensures proper padding and text color).</p>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+      <div class="container-fluid">
+        <span class="navbar-text">Navbar text</span>
+      </div>
+    </nav>
+
+  </body>
+</html>
