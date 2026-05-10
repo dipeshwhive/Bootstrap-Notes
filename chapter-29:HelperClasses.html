@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 29: Bootstrap 5 Utilities</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body class="container mt-5">
+    <h1>Bootstrap 5 Utilities / Helper Classes</h1>
+    <p>Bootstrap 5 has a lot of utility/helper classes to quickly style elements without using any CSS code.</p>
+
+    <!-- BORDERS SECTION -->
+    <h2 class="mt-5">Borders</h2>
+    <p>Use the <code>.border</code> class to add a border to an element.</p>
+    <div class="border p-3 mb-3">
+      <p>This element has a border on all sides.</p>
+    </div>
+
+    <!-- Border Width -->
+    <h3>Border Width</h3>
+    <p>Use the <code>.border-1|2|3|4|5</code> classes to control the border width.</p>
+    <div class="border border-1 p-3 mb-2">Border width 1px</div>
+    <div class="border border-2 p-3 mb-2">Border width 2px</div>
+    <div class="border border-3 p-3 mb-2">Border width 3px</div>
+    <div class="border border-4 p-3 mb-2">Border width 4px</div>
+    <div class="border border-5 p-3 mb-3">Border width 5px</div>
+
+    <!-- Border Color -->
+    <h3>Border Color</h3>
+    <p>Use the <code>.border-primary|secondary|success|danger|warning|info|light|dark|white</code> classes to change the border color.</p>
+    <div class="border border-primary p-3 mb-2">Primary Border</div>
+    <div class="border border-success p-3 mb-2">Success Border</div>
+    <div class="border border-danger p-3 mb-2">Danger Border</div>
+    <div class="border border-warning p-3 mb-2">Warning Border</div>
+    <div class="border border-info p-3 mb-3">Info Border</div>
+
+    <!-- Border Radius -->
+    <h3>Border Radius</h3>
+    <p>Use the <code>.rounded</code>, <code>.rounded-1|2|3</code>, <code>.rounded-start</code>, <code>.rounded-end</code>, <code>.rounded-top</code>, <code>.rounded-bottom</code> classes to add rounded corners.</p>
+    <div class="border p-3 rounded mb-2">Rounded corners</div>
+    <div class="border p-3 rounded-1 mb-2">Rounded 1 (small)</div>
+    <div class="border p-3 rounded-2 mb-2">Rounded 2 (medium)</div>
+    <div class="border p-3 rounded-3 mb-2">Rounded 3 (large)</div>
+    <div class="border p-3 rounded-circle mb-3" style="width: 100px; height: 100px;">Circle</div>
+
+    <!-- FLOAT SECTION -->
+    <h2 class="mt-5">Float</h2>
+    <p>Use the <code>.float-start</code> class to float an element to the left, and <code>.float-end</code> to float it to the right. The floated element will wrap text around it.</p>
+    <div class="border p-3 mb-3">
+      <div class="float-start border bg-light p-2 me-3 mb-3">Floated left</div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. The text wraps around the floated element.</p>
+    </div>
+
+    <!-- Clearfix -->
+    <h3>Clearfix</h3>
+    <p>The <code>.clearfix</code> class clears floated elements. When you have floated elements, the parent container may collapse because the floated elements are removed from the normal document flow. Use clearfix on the parent to prevent this collapse and make the parent expand to contain the floated children.</p>
+    <div class="border p-3 mb-3 clearfix">
+      <div class="float-start border bg-light p-2 me-3">Floated element</div>
+      <p>Without clearfix, the parent would collapse. With clearfix, the parent properly contains the floated element.</p>
+    </div>
+
+    <!-- Responsive Floats -->
+    <h3>Responsive Floats</h3>
+    <p>Use the <code>.float-sm-start|end</code>, <code>.float-md-start|end</code>, <code>.float-lg-start|end</code>, <code>.float-xl-start|end</code>, <code>.float-xxl-start|end</code> classes to control float on specific screen sizes. This allows elements to float on larger screens but appear normally on smaller screens.</p>
+    <div class="border p-3 mb-3">
+      <div class="float-md-start border bg-light p-2 me-3 mb-3">Floats left on md and larger</div>
+      <p>Resize the browser to see the float behavior change. On small screens, this element is not floated. On medium (md) and larger screens, it floats to the left.</p>
+    </div>
+
+    <!-- CENTER ALIGN SECTION -->
+    <h2 class="mt-5">Text Alignment & Center Align</h2>
+    <p>Use <code>.text-start</code>, <code>.text-center</code>, <code>.text-end</code> to align text horizontally.</p>
+    <div class="border p-3 text-start mb-2">Left aligned text</div>
+    <div class="border p-3 text-center mb-2">Center aligned text</div>
+    <div class="border p-3 text-end mb-3">Right aligned text</div>
+
+    <p>To center an element within its container (not just text), use <code>.d-flex justify-content-center</code> or <code>.mx-auto</code> (for block-level elements with a defined width).</p>
+    <div class="border p-3 mb-2 d-flex justify-content-center">
+      <div class="bg-light p-2">Centered with flexbox</div>
+    </div>
+    <div class="border p-3 bg-light mx-auto" style="width: 200px;">Centered with mx-auto</div>
+
+    <!-- WIDTH & HEIGHT SECTION -->
+    <h2 class="mt-5">Width</h2>
+    <p>Use the <code>.w-25</code>, <code>.w-50</code>, <code>.w-75</code>, <code>.w-100</code>, <code>.w-auto</code> classes to set the width of an element as a percentage of its parent.</p>
+    <div class="border p-3 w-25 mb-2 bg-light">Width 25%</div>
+    <div class="border p-3 w-50 mb-2 bg-light">Width 50%</div>
+    <div class="border p-3 w-75 mb-2 bg-light">Width 75%</div>
+    <div class="border p-3 w-100 mb-3 bg-light">Width 100%</div>
+
+    <h3>Height</h3>
+    <p>Use the <code>.h-25</code>, <code>.h-50</code>, <code>.h-75</code>, <code>.h-100</code>, <code>.h-auto</code> classes to set the height of an element as a percentage of its parent.</p>
+    <div class="border p-3 mb-3" style="height: 300px;">
+      <div class="border p-3 h-25 bg-light mb-2">Height 25%</div>
+      <div class="border p-3 h-50 bg-light mb-2">Height 50%</div>
+      <div class="border p-3 h-75 bg-light">Height 75%</div>
+    </div>
+
+    <!-- SPACING SECTION -->
+    <h2 class="mt-5">Spacing (Margin & Padding)</h2>
+    <p>Bootstrap provides utility classes for margins (m*) and padding (p*) that range from 0 to 5 (or more). The classes follow the format: <code>.m-{size}</code>, <code>.p-{size}</code>, <code>.mt-{size}</code>, <code>.mb-{size}</code>, <code>.ml-{size}</code>, <code>.mr-{size}</code>, <code>.pt-{size}</code>, <code>.pb-{size}</code>, <code>.pl-{size}</code>, <code>.pr-{size}</code>.</p>
+
+    <h4>Margin Examples</h4>
+    <div class="bg-light mb-2">m-0 (no margin)</div>
+    <div class="bg-light m-1 border">m-1 (0.25rem)</div>
+    <div class="bg-light m-2 border">m-2 (0.5rem)</div>
+    <div class="bg-light m-3 border">m-3 (1rem)</div>
+    <div class="bg-light m-5 border mb-3">m-5 (3rem)</div>
+
+    <h4>Padding Examples</h4>
+    <div class="bg-light border mb-2">No padding</div>
+    <div class="bg-light border p-1 mb-2">p-1 (0.25rem)</div>
+    <div class="bg-light border p-2 mb-2">p-2 (0.5rem)</div>
+    <div class="bg-light border p-3 mb-2">p-3 (1rem)</div>
+    <div class="bg-light border p-5 mb-3">p-5 (3rem)</div>
+
+    <h4>Directional Spacing (Top, Bottom, Left, Right)</h4>
+    <p>Use <code>.mt-{size}</code> for top margin, <code>.mb-{size}</code> for bottom margin, <code>.ms-{size}</code> for left margin, <code>.me-{size}</code> for right margin, and similar for padding.</p>
+    <div class="bg-light border mt-3 mb-3">mt-3 (margin-top)</div>
+    <div class="bg-light border mb-3">mb-3 (margin-bottom)</div>
+    <div class="bg-light border ms-3 mb-3">ms-3 (margin-left)</div>
+    <div class="bg-light border me-3 mb-3">me-3 (margin-right)</div>
+
+    <h4>Responsive Spacing</h4>
+    <p>Use the <code>.m{property}-{breakpoint}-{size}</code> format to apply spacing at specific screen sizes. For example, <code>.mt-sm-2</code>, <code>.p-md-3</code>, <code>.mb-lg-5</code>.</p>
+    <div class="bg-light border p-2 p-md-3 p-lg-5 mb-3">Padding changes based on screen size (responsive)</div>
+
+    <!-- SHADOWS SECTION -->
+    <h2 class="mt-5">Shadows</h2>
+    <p>Use the <code>.shadow-sm</code>, <code>.shadow</code>, <code>.shadow-lg</code> classes to add shadows to elements.</p>
+    <div class="border p-3 shadow-sm mb-3">Shadow SM (small)</div>
+    <div class="border p-3 shadow mb-3">Shadow (standard)</div>
+    <div class="border p-3 shadow-lg mb-3">Shadow LG (large)</div>
+
+    <!-- VERTICAL ALIGN SECTION -->
+    <h2 class="mt-5">Vertical Align</h2>
+    <p>Use the <code>.align-baseline</code>, <code>.align-top</code>, <code>.align-middle</code>, <code>.align-bottom</code>, <code>.align-text-bottom</code>, <code>.align-text-top</code> classes to vertically align inline or inline-block elements.</p>
+    <div class="border p-3 mb-3">
+      <span class="align-baseline">align-baseline</span>
+      <span class="align-top">align-top</span>
+      <span class="align-middle">align-middle</span>
+      <span class="align-bottom">align-bottom</span>
+    </div>
+
+    <!-- ASPECT RATIO SECTION -->
+    <h2 class="mt-5">Aspect Ratio</h2>
+    <p>Use the <code>.ratio</code> class combined with <code>.ratio-16x9</code>, <code>.ratio-4x3</code>, <code>.ratio-1x1</code>, <code>.ratio-21x9</code> to create responsive aspect ratio containers. This is useful for maintaining proportions of images or videos.</p>
+    <div class="ratio ratio-16x9 mb-3">
+      <img src="https://picsum.photos/800/450?random=1" alt="Sample 16x9 image">
+    </div>
+    <div class="ratio ratio-4x3 mb-3">
+      <img src="https://picsum.photos/800/600?random=2" alt="Sample 4x3 image">
+    </div>
+    <div class="ratio ratio-1x1 mb-3">
+      <img src="https://picsum.photos/600/600?random=3" alt="Sample 1x1 image">
+    </div>
+
+    <!-- VISIBILITY SECTION -->
+    <h2 class="mt-5">Visibility</h2>
+    <p>Use the <code>.visible</code> class to make elements visible or <code>.invisible</code> to hide them while still taking up space in the layout.</p>
+    <div class="border p-3 mb-3">
+      <div class="bg-light p-2 visible">This is visible</div>
+    </div>
+    <div class="border p-3 mb-3">
+      <div class="bg-light p-2 invisible">This is invisible but takes up space</div>
+      <p>Notice the space above where the invisible element is.</p>
+    </div>
+
+    <p>To hide elements completely (including space), use the <code>.d-none</code> display utility, or use <code>.d-none d-md-block</code> for responsive visibility.</p>
+    <div class="bg-light p-2 d-none mb-3">Hidden on all screens</div>
+    <div class="bg-light p-2 d-none d-md-block mb-3">Hidden on small screens, visible on md and larger</div>
+
+    <!-- CLOSE ICON SECTION -->
+    <h2 class="mt-5">Close Icon</h2>
+    <p>Use the <code>.btn-close</code> class to create a close button (×). This is commonly used in alerts, modals, and other dismissible components.</p>
+    <div class="border p-3 mb-3">
+      <p>Alert with close button:
+        <button type="button" class="btn-close" aria-label="Close"></button>
+      </p>
+    </div>
+    <p>You can also make it white on dark backgrounds with <code>.btn-close.btn-close-white</code>:</p>
+    <div class="bg-dark border p-3 mb-3">
+      <p class="text-white">Dark background with close button:
+        <button type="button" class="btn-close btn-close-white" aria-label="Close"></button>
+      </p>
+    </div>
+
+    <!-- VISUALLY HIDDEN SECTION -->
+    <h2 class="mt-5">Visually Hidden Class</h2>
+    <p>The <code>.visually-hidden</code> class hides an element visually while keeping it accessible to screen readers. This is useful for providing additional context to users with assistive technologies without cluttering the visual interface.</p>
+    <div class="border p-3 mb-3">
+      <button class="btn btn-primary">
+        Read more
+        <span class="visually-hidden">about our services</span>
+      </button>
+      <p>The text "about our services" is not visible but will be read by screen readers for context.</p>
+    </div>
+
+    <div class="border p-3 mb-5">
+      <h3 class="visually-hidden">Form Labels (Visually Hidden)</h3>
+      <input type="text" class="form-control" placeholder="Email address">
+      <p>The label "Form Labels (Visually Hidden)" is hidden visually but accessible to screen readers, improving accessibility without taking up visual space.</p>
+    </div>
+
+  </body>
+</html>
