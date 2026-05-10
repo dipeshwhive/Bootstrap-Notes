@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Chapter 32: Bootstrap 5 CSS Grid</title>
+  </head>
+  <body class="container mt-5">
+    <h1>Bootstrap 5 CSS Grid</h1>
+    <p>Bootstrap 5 includes CSS Grid utility classes that make it easy to create grid-based layouts. The <code>.d-grid</code> class transforms an element into a CSS Grid container.</p>
+
+    <!-- D-GRID BASICS -->
+    <h2 class="mt-5">Grid Container (d-grid)</h2>
+    <p>The <code>.d-grid</code> class creates a CSS Grid container. By default, it creates a single column layout. All direct children become grid items.</p>
+    <div class="d-grid gap-3 mb-3">
+      <div class="p-3 bg-info text-white">Grid item 1</div>
+      <div class="p-3 bg-warning text-dark">Grid item 2</div>
+      <div class="p-3 bg-primary text-white">Grid item 3</div>
+    </div>
+
+    <!-- GRID COLUMNS -->
+    <h2 class="mt-5">Grid Columns</h2>
+    <p>Use the <code>.grid-cols-{n}</code> class to specify how many columns the grid should have. Valid values are 1 to 12. In Bootstrap 5, you can use <code>grid-template-columns</code> via custom CSS or use the <code>.gap-*</code> utility with explicit column definitions.</p>
+
+    <h3>Two Column Grid</h3>
+    <p>Create a grid with 2 columns using Bootstrap's grid system or inline styles with grid-template-columns.</p>
+    <div class="d-grid gap-3 mb-3" style="grid-template-columns: 1fr 1fr;">
+      <div class="p-3 bg-info text-white">Column 1</div>
+      <div class="p-3 bg-warning text-dark">Column 2</div>
+      <div class="p-3 bg-primary text-white">Column 1</div>
+      <div class="p-3 bg-success text-white">Column 2</div>
+    </div>
+
+    <h3>Three Column Grid</h3>
+    <p>Create a grid with 3 columns.</p>
+    <div class="d-grid gap-3 mb-3" style="grid-template-columns: 1fr 1fr 1fr;">
+      <div class="p-3 bg-info text-white">Column 1</div>
+      <div class="p-3 bg-warning text-dark">Column 2</div>
+      <div class="p-3 bg-primary text-white">Column 3</div>
+      <div class="p-3 bg-success text-white">Column 1</div>
+      <div class="p-3 bg-danger text-white">Column 2</div>
+      <div class="p-3 bg-secondary text-white">Column 3</div>
+    </div>
+
+    <h3>Four Column Grid</h3>
+    <p>Create a grid with 4 equal-width columns.</p>
+    <div class="d-grid gap-3 mb-3" style="grid-template-columns: 1fr 1fr 1fr 1fr;">
+      <div class="p-3 bg-info text-white">Item 1</div>
+      <div class="p-3 bg-warning text-dark">Item 2</div>
+      <div class="p-3 bg-primary text-white">Item 3</div>
+      <div class="p-3 bg-success text-white">Item 4</div>
+      <div class="p-3 bg-danger text-white">Item 5</div>
+      <div class="p-3 bg-secondary text-white">Item 6</div>
+      <div class="p-3 bg-info text-white">Item 7</div>
+      <div class="p-3 bg-warning text-dark">Item 8</div>
+    </div>
+
+    <!-- GAP -->
+    <h2 class="mt-5">Gap</h2>
+    <p>Use the <code>.gap-{size}</code> class to add space between grid items (both horizontally and vertically). Valid sizes are 0, 1, 2, 3, 4, and 5 (or custom spacing values).</p>
+
+    <h3>No Gap (gap-0)</h3>
+    <p>Grid items are placed directly next to each other with no space.</p>
+    <div class="d-grid gap-0 mb-3" style="grid-template-columns: 1fr 1fr 1fr;">
+      <div class="p-3 bg-info text-white border">Item 1</div>
+      <div class="p-3 bg-warning text-dark border">Item 2</div>
+      <div class="p-3 bg-primary text-white border">Item 3</div>
+      <div class="p-3 bg-success text-white border">Item 4</div>
+      <div class="p-3 bg-danger text-white border">Item 5</div>
+      <div class="p-3 bg-secondary text-white border">Item 6</div>
+    </div>
+
+    <h3>Small Gap (gap-1)</h3>
+    <p>Use <code>.gap-1</code> for a small gap (0.25rem) between items.</p>
+    <div class="d-grid gap-1 mb-3" style="grid-template-columns: 1fr 1fr 1fr;">
+      <div class="p-3 bg-info text-white">Item 1</div>
+      <div class="p-3 bg-warning text-dark">Item 2</div>
+      <div class="p-3 bg-primary text-white">Item 3</div>
+      <div class="p-3 bg-success text-white">Item 4</div>
+      <div class="p-3 bg-danger text-white">Item 5</div>
+      <div class="p-3 bg-secondary text-white">Item 6</div>
+    </div>
+
+    <h3>Medium Gap (gap-3)</h3>
+    <p>Use <code>.gap-3</code> for a medium gap (1rem) between items.</p>
+    <div class="d-grid gap-3 mb-3" style="grid-template-columns: 1fr 1fr 1fr;">
+      <div class="p-3 bg-info text-white">Item 1</div>
+      <div class="p-3 bg-warning text-dark">Item 2</div>
+      <div class="p-3 bg-primary text-white">Item 3</div>
+      <div class="p-3 bg-success text-white">Item 4</div>
+      <div class="p-3 bg-danger text-white">Item 5</div>
+      <div class="p-3 bg-secondary text-white">Item 6</div>
+    </div>
+
+    <h3>Large Gap (gap-5)</h3>
+    <p>Use <code>.gap-5</code> for a large gap (3rem) between items.</p>
+    <div class="d-grid gap-5 mb-3" style="grid-template-columns: 1fr 1fr 1fr;">
+      <div class="p-3 bg-info text-white">Item 1</div>
+      <div class="p-3 bg-warning text-dark">Item 2</div>
+      <div class="p-3 bg-primary text-white">Item 3</div>
+      <div class="p-3 bg-success text-white">Item 4</div>
+      <div class="p-3 bg-danger text-white">Item 5</div>
+      <div class="p-3 bg-secondary text-white">Item 6</div>
+    </div>
+
+    <!-- RESPONSIVE GRID -->
+    <h2 class="mt-5">Responsive Grid</h2>
+    <p>Create responsive grids that change the number of columns based on screen size. You can use CSS Media Queries with Bootstrap breakpoints or adjust grid-template-columns using responsive classes.</p>
+
+    <h3>Responsive Example</h3>
+    <p>This grid shows 1 column on small screens, 2 columns on medium screens, and 4 columns on large screens. Resize the browser to see the changes.</p>
+    <div class="d-grid gap-3 mb-3" style="grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));">
+      <div class="p-3 bg-info text-white">Item 1</div>
+      <div class="p-3 bg-warning text-dark">Item 2</div>
+      <div class="p-3 bg-primary text-white">Item 3</div>
+      <div class="p-3 bg-success text-white">Item 4</div>
+      <div class="p-3 bg-danger text-white">Item 5</div>
+      <div class="p-3 bg-secondary text-white">Item 6</div>
+      <div class="p-3 bg-info text-white">Item 7</div>
+      <div class="p-3 bg-warning text-dark">Item 8</div>
+    </div>
+
+    <!-- AUTO-FIT -->
+    <h2 class="mt-5">Auto-Fit Grid</h2>
+    <p>Use <code>repeat(auto-fit, minmax(...))</code> to create a flexible grid that automatically adjusts the number of columns based on available space. This is useful for responsive layouts that don't require specific breakpoints.</p>
+
+    <h3>Auto-Fit with Minimum Width</h3>
+    <p>Items will automatically wrap to the next row when there's not enough space, creating as many columns as needed while each column is at least 200px wide.</p>
+    <div class="d-grid gap-3 mb-3" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+      <div class="p-3 bg-info text-white">Item 1</div>
+      <div class="p-3 bg-warning text-dark">Item 2</div>
+      <div class="p-3 bg-primary text-white">Item 3</div>
+      <div class="p-3 bg-success text-white">Item 4</div>
+      <div class="p-3 bg-danger text-white">Item 5</div>
+      <div class="p-3 bg-secondary text-white">Item 6</div>
+    </div>
+
+    <!-- AUTO-FILL -->
+    <h2 class="mt-5">Auto-Fill Grid</h2>
+    <p>Use <code>repeat(auto-fill, minmax(...))</code> to create a grid that fills all available space with grid tracks, even if there are no items to fill them. The difference from auto-fit is that empty tracks are created and take up space.</p>
+
+    <h3>Auto-Fill with Minimum Width</h3>
+    <p>Similar to auto-fit, but creates additional columns even if they're empty.</p>
+    <div class="d-grid gap-3 mb-3" style="grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));">
+      <div class="p-3 bg-info text-white">Item 1</div>
+      <div class="p-3 bg-warning text-dark">Item 2</div>
+      <div class="p-3 bg-primary text-white">Item 3</div>
+      <div class="p-3 bg-success text-white">Item 4</div>
+    </div>
+
+    <!-- JUSTIFY ITEMS -->
+    <h2 class="mt-5">Justify Items</h2>
+    <p>The <code>.justify-items-*</code> classes align grid items <strong>horizontally</strong> within their grid cells.</p>
+
+    <h3>Justify Items Start</h3>
+    <p>Items align to the <strong>left</strong> of each cell.</p>
+    <div class="d-grid gap-2 mb-3" style="grid-template-columns: 1fr 1fr 1fr;">
+      <div class="border border-2 border-dashed p-0" style="height: 80px; display: grid; justify-items: start; align-items: center;">
+        <div class="bg-info text-white px-3 py-2">Item 1</div>
+      </div>
+      <div class="border border-2 border-dashed p-0" style="height: 80px; display: grid; justify-items: start; align-items: center;">
+        <div class="bg-warning text-dark px-3 py-2">Item 2</div>
+      </div>
+      <div class="border border-2 border-dashed p-0" style="height: 80px; display: grid; justify-items: start; align-items: center;">
+        <div class="bg-primary text-white px-3 py-2">Item 3</div>
+      </div>
+    </div>
+
+    <h3>Justify Items Center</h3>
+    <p>Items align to the <strong>center</strong> of each cell.</p>
+    <div class="d-grid gap-2 mb-3" style="grid-template-columns: 1fr 1fr 1fr;">
+      <div class="border border-2 border-dashed p-0" style="height: 80px; display: grid; justify-items: center; align-items: center;">
+        <div class="bg-info text-white px-3 py-2">Item 1</div>
+      </div>
+      <div class="border border-2 border-dashed p-0" style="height: 80px; display: grid; justify-items: center; align-items: center;">
+        <div class="bg-warning text-dark px-3 py-2">Item 2</div>
+      </div>
+      <div class="border border-2 border-dashed p-0" style="height: 80px; display: grid; justify-items: center; align-items: center;">
+        <div class="bg-primary text-white px-3 py-2">Item 3</div>
+      </div>
+    </div>
+
+    <h3>Justify Items End</h3>
+    <p>Items align to the <strong>right</strong> of each cell.</p>
+    <div class="d-grid gap-2 mb-3" style="grid-template-columns: 1fr 1fr 1fr;">
+      <div class="border border-2 border-dashed p-0" style="height: 80px; display: grid; justify-items: end; align-items: center;">
+        <div class="bg-info text-white px-3 py-2">Item 1</div>
+      </div>
+      <div class="border border-2 border-dashed p-0" style="height: 80px; display: grid; justify-items: end; align-items: center;">
+        <div class="bg-warning text-dark px-3 py-2">Item 2</div>
+      </div>
+      <div class="border border-2 border-dashed p-0" style="height: 80px; display: grid; justify-items: end; align-items: center;">
+        <div class="bg-primary text-white px-3 py-2">Item 3</div>
+      </div>
+    </div>
+
+
+    <!-- ALIGN ITEMS -->
+    <h2 class="mt-5">Align Items</h2>
+    <p>The <code>.align-items-*</code> classes align grid items <strong>vertically</strong> within their grid cells.</p>
+
+    <h3>Align Items Start</h3>
+    <p>Items align to the <strong>top</strong> of each cell.</p>
+    <div class="d-grid gap-2 mb-3" style="grid-template-columns: 1fr 1fr 1fr;">
+      <div class="border border-2 border-dashed p-0" style="height: 120px; display: grid; align-items: start; justify-items: center;">
+        <div class="bg-info text-white px-3 py-2">Item 1</div>
+      </div>
+      <div class="border border-2 border-dashed p-0" style="height: 120px; display: grid; align-items: start; justify-items: center;">
+        <div class="bg-warning text-dark px-3 py-2">Item 2</div>
+      </div>
+      <div class="border border-2 border-dashed p-0" style="height: 120px; display: grid; align-items: start; justify-items: center;">
+        <div class="bg-primary text-white px-3 py-2">Item 3</div>
+      </div>
+    </div>
+
+    <h3>Align Items Center</h3>
+    <p>Items align to the <strong>middle</strong> of each cell.</p>
+    <div class="d-grid gap-2 mb-3" style="grid-template-columns: 1fr 1fr 1fr;">
+      <div class="border border-2 border-dashed p-0" style="height: 120px; display: grid; align-items: center; justify-items: center;">
+        <div class="bg-info text-white px-3 py-2">Item 1</div>
+      </div>
+      <div class="border border-2 border-dashed p-0" style="height: 120px; display: grid; align-items: center; justify-items: center;">
+        <div class="bg-warning text-dark px-3 py-2">Item 2</div>
+      </div>
+      <div class="border border-2 border-dashed p-0" style="height: 120px; display: grid; align-items: center; justify-items: center;">
+        <div class="bg-primary text-white px-3 py-2">Item 3</div>
+      </div>
+    </div>
+
+    <h3>Align Items End</h3>
+    <p>Items align to the <strong>bottom</strong> of each cell.</p>
+    <div class="d-grid gap-2 mb-3" style="grid-template-columns: 1fr 1fr 1fr;">
+      <div class="border border-2 border-dashed p-0" style="height: 120px; display: grid; align-items: end; justify-items: center;">
+        <div class="bg-info text-white px-3 py-2">Item 1</div>
+      </div>
+      <div class="border border-2 border-dashed p-0" style="height: 120px; display: grid; align-items: end; justify-items: center;">
+        <div class="bg-warning text-dark px-3 py-2">Item 2</div>
+      </div>
+      <div class="border border-2 border-dashed p-0" style="height: 120px; display: grid; align-items: end; justify-items: center;">
+        <div class="bg-primary text-white px-3 py-2">Item 3</div>
+      </div>
+    </div>
+
+    <!-- JUSTIFY CONTENT -->
+    <h2 class="mt-5">Justify Content</h2>
+    <p>The <code>.justify-content-*</code> classes align the entire grid horizontally within the container. Valid classes are <code>start</code>, <code>end</code>, <code>center</code>, <code>between</code>, <code>around</code>, and <code>evenly</code>.</p>
+
+    <h3>Justify Content Start</h3>
+    <p>Use <code>.justify-content-start</code> to align the grid to the left (default).</p>
+    <div class="d-grid gap-3 mb-3 justify-content-start" style="grid-template-columns: repeat(3, 100px); border: 2px dashed #ccc; padding: 10px;">
+      <div class="p-3 bg-info text-white">Item 1</div>
+      <div class="p-3 bg-warning text-dark">Item 2</div>
+      <div class="p-3 bg-primary text-white">Item 3</div>
+    </div>
+
+    <h3>Justify Content Center</h3>
+    <p>Use <code>.justify-content-center</code> to center the grid within the container.</p>
+    <div class="d-grid gap-3 mb-3 justify-content-center" style="grid-template-columns: repeat(3, 100px); border: 2px dashed #ccc; padding: 10px;">
+      <div class="p-3 bg-info text-white">Item 1</div>
+      <div class="p-3 bg-warning text-dark">Item 2</div>
+      <div class="p-3 bg-primary text-white">Item 3</div>
+    </div>
+
+    <h3>Justify Content End</h3>
+    <p>Use <code>.justify-content-end</code> to align the grid to the right.</p>
+    <div class="d-grid gap-3 mb-3 justify-content-end" style="grid-template-columns: repeat(3, 100px); border: 2px dashed #ccc; padding: 10px;">
+      <div class="p-3 bg-info text-white">Item 1</div>
+      <div class="p-3 bg-warning text-dark">Item 2</div>
+      <div class="p-3 bg-primary text-white">Item 3</div>
+    </div>
+
+    <h3>Justify Content Between</h3>
+    <p>Use <code>.justify-content-between</code> to distribute the grid tracks evenly with space between them.</p>
+    <div class="d-grid gap-3 mb-3 justify-content-between" style="grid-template-columns: repeat(3, 100px); border: 2px dashed #ccc; padding: 10px;">
+      <div class="p-3 bg-info text-white">Item 1</div>
+      <div class="p-3 bg-warning text-dark">Item 2</div>
+      <div class="p-3 bg-primary text-white">Item 3</div>
+    </div>
+
+    <!-- ALIGN CONTENT -->
+    <h2 class="mt-5">Align Content</h2>
+    <p>The <code>.align-content-*</code> classes align the entire grid vertically within the container. Valid classes are <code>start</code>, <code>end</code>, <code>center</code>, <code>between</code>, <code>around</code>, and <code>stretch</code>.</p>
+
+    <h3>Align Content Start</h3>
+    <p>Use <code>.align-content-start</code> to align the grid to the top.</p>
+    <div class="d-grid gap-3 mb-3 align-content-start" style="grid-template-columns: 1fr 1fr; height: 200px; border: 2px dashed #ccc;">
+      <div class="p-3 bg-info text-white">Item 1</div>
+      <div class="p-3 bg-warning text-dark">Item 2</div>
+      <div class="p-3 bg-primary text-white">Item 3</div>
+      <div class="p-3 bg-success text-white">Item 4</div>
+    </div>
+
+    <h3>Align Content Center</h3>
+    <p>Use <code>.align-content-center</code> to center the grid vertically.</p>
+    <div class="d-grid gap-3 mb-3 align-content-center" style="grid-template-columns: 1fr 1fr; height: 200px; border: 2px dashed #ccc;">
+      <div class="p-3 bg-info text-white">Item 1</div>
+      <div class="p-3 bg-warning text-dark">Item 2</div>
+      <div class="p-3 bg-primary text-white">Item 3</div>
+      <div class="p-3 bg-success text-white">Item 4</div>
+    </div>
+
+    <h3>Align Content End</h3>
+    <p>Use <code>.align-content-end</code> to align the grid to the bottom.</p>
+    <div class="d-grid gap-3 mb-3 align-content-end" style="grid-template-columns: 1fr 1fr; height: 200px; border: 2px dashed #ccc;">
+      <div class="p-3 bg-info text-white">Item 1</div>
+      <div class="p-3 bg-warning text-dark">Item 2</div>
+      <div class="p-3 bg-primary text-white">Item 3</div>
+      <div class="p-3 bg-success text-white">Item 4</div>
+    </div>
+
+    <!-- GRID AUTO -->
+    <h2 class="mt-5">Grid Auto Columns & Rows</h2>
+    <p>The <code>grid-auto-columns</code> and <code>grid-auto-rows</code> CSS properties control the size of implicitly-created grid tracks. You can set these via inline styles to control how items that overflow the explicitly defined grid are sized.</p>
+
+    <h3>Auto Row Height Example</h3>
+    <p>Set the minimum height for automatically created rows.</p>
+    <div class="d-grid gap-3 mb-3" style="grid-template-columns: 1fr 1fr; grid-auto-rows: 100px;">
+      <div class="p-3 bg-info text-white">Item 1</div>
+      <div class="p-3 bg-warning text-dark">Item 2</div>
+      <div class="p-3 bg-primary text-white">Item 3</div>
+      <div class="p-3 bg-success text-white">Item 4</div>
+    </div>
+
+    <!-- GRID COLUMN & ROW SPAN -->
+    <h2 class="mt-5">Grid Column & Row Span</h2>
+    <p>Use CSS classes like <code>.col-span-*</code> or inline <code>grid-column</code> styles to make items span multiple columns or rows. This allows you to create more complex grid layouts.</p>
+
+    <h3>Column Spanning Example</h3>
+    <p>Some items span multiple columns to create emphasis or featured content areas.</p>
+    <div class="d-grid gap-3 mb-3" style="grid-template-columns: 1fr 1fr 1fr;">
+      <div class="p-3 bg-info text-white" style="grid-column: 1 / 3;">Featured Item (spans 2 columns)</div>
+      <div class="p-3 bg-warning text-dark">Item 2</div>
+      <div class="p-3 bg-primary text-white">Item 3</div>
+      <div class="p-3 bg-success text-white">Item 4</div>
+      <div class="p-3 bg-danger text-white" style="grid-column: 2 / 4;">Featured Item (spans 2 columns)</div>
+    </div>
+
+    <!-- RESPONSIVE GRID UTILITIES -->
+    <h2 class="mt-5">Responsive Grid Utilities</h2>
+    <p>You can apply different grid properties at different screen sizes using media queries or by combining Bootstrap's responsive utility prefixes with gap classes.</p>
+
+    <h3>Responsive Gap Example</h3>
+    <p>Use different gap sizes on different screen sizes. For this, you'll typically need to add responsive classes with media queries or use gap utilities with responsive modifiers.</p>
+    <div class="d-grid gap-2 gap-md-3 gap-lg-5 mb-3" style="grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));">
+      <div class="p-3 bg-info text-white">Item 1</div>
+      <div class="p-3 bg-warning text-dark">Item 2</div>
+      <div class="p-3 bg-primary text-white">Item 3</div>
+      <div class="p-3 bg-success text-white">Item 4</div>
+      <div class="p-3 bg-danger text-white">Item 5</div>
+      <div class="p-3 bg-secondary text-white">Item 6</div>
+    </div>
+
+    <!-- GRID VS FLEXBOX -->
+    <h2 class="mt-5">Grid vs Flexbox</h2>
+    <p>Both CSS Grid and Flexbox are layout tools, but they serve different purposes:</p>
+    <ul>
+      <li><strong>Grid:</strong> Two-dimensional layout system. Great for overall page layouts with rows and columns. Aligns items along both axes simultaneously.</li>
+      <li><strong>Flexbox:</strong> One-dimensional layout system. Great for components and smaller layouts. Aligns items along a single axis (row or column).</li>
+      <li><strong>When to use Grid:</strong> Page layouts, dashboard layouts, card grids, complex multi-row/column arrangements.</li>
+      <li><strong>When to use Flexbox:</strong> Navigation bars, button groups, single-line layouts, component alignment within a page.</li>
+    </ul>
+
+    <!-- PRACTICAL GRID LAYOUT EXAMPLE -->
+    <h2 class="mt-5">Practical Grid Layout Example</h2>
+    <p>A common layout: Header spans full width, sidebar and main content side-by-side, footer spans full width.</p>
+    <div class="d-grid gap-3 mb-5" style="grid-template-columns: 250px 1fr; grid-template-rows: auto 1fr auto;">
+      <div class="p-3 bg-dark text-white" style="grid-column: 1 / 3;">Header (spans full width)</div>
+      <div class="p-3 bg-secondary text-white">Sidebar</div>
+      <div class="p-3 bg-light border">Main Content Area</div>
+      <div class="p-3 bg-dark text-white" style="grid-column: 1 / 3;">Footer (spans full width)</div>
+    </div>
+
+  </body>
+</html>

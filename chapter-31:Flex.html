@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Chapter 31: Bootstrap 5 Flex</title>
+  </head>
+  <body class="container mt-5">
+    <h1>Bootstrap 5 Flexbox</h1>
+    <p>Bootstrap 5 uses flexbox for layout instead of floats. The Flexible Box Layout Module makes it easier to design flexible responsive layout structures.</p>
+
+    <!-- FLEXBOX BASICS -->
+    <h2 class="mt-5">Flexbox Container</h2>
+    <p>To create a flexbox container and transform direct children into flex items, use the <code>.d-flex</code> class.</p>
+    <div class="d-flex p-3 bg-secondary text-white mb-3">
+      <div class="p-2 bg-info">Flex item 1</div>
+      <div class="p-2 bg-warning">Flex item 2</div>
+      <div class="p-2 bg-primary">Flex item 3</div>
+    </div>
+
+    <h3>Inline Flexbox</h3>
+    <p>Use the <code>.d-inline-flex</code> class to create an inline flexbox container. The inline flexbox container will only take up the necessary space.</p>
+    <div class="d-inline-flex p-3 bg-secondary text-white mb-3">
+      <div class="p-2 bg-info">Flex item 1</div>
+      <div class="p-2 bg-warning">Flex item 2</div>
+      <div class="p-2 bg-primary">Flex item 3</div>
+    </div>
+
+    <!-- DIRECTION -->
+    <h2 class="mt-5">Flex Direction</h2>
+    <p>The flex direction can be changed with the <code>.flex-row</code>, <code>.flex-row-reverse</code>, <code>.flex-column</code>, and <code>.flex-column-reverse</code> classes.</p>
+
+    <h3>Horizontal Direction (flex-row)</h3>
+    <p>Use <code>.flex-row</code> to display flex items horizontally (side by side). This is the default.</p>
+    <div class="d-flex flex-row bg-secondary text-white mb-3">
+      <div class="p-2 bg-info">Flex item 1</div>
+      <div class="p-2 bg-warning">Flex item 2</div>
+      <div class="p-2 bg-primary">Flex item 3</div>
+    </div>
+
+    <h3>Horizontal Direction Reversed (flex-row-reverse)</h3>
+    <p>Use <code>.flex-row-reverse</code> to display flex items horizontally but in reverse order (right-aligned).</p>
+    <div class="d-flex flex-row-reverse bg-secondary text-white mb-3">
+      <div class="p-2 bg-info">Flex item 1</div>
+      <div class="p-2 bg-warning">Flex item 2</div>
+      <div class="p-2 bg-primary">Flex item 3</div>
+    </div>
+
+    <h3>Vertical Direction (flex-column)</h3>
+    <p>Use <code>.flex-column</code> to display flex items vertically (on top of each other).</p>
+    <div class="d-flex flex-column bg-secondary text-white mb-3">
+      <div class="p-2 bg-info">Flex item 1</div>
+      <div class="p-2 bg-warning">Flex item 2</div>
+      <div class="p-2 bg-primary">Flex item 3</div>
+    </div>
+
+    <h3>Vertical Direction Reversed (flex-column-reverse)</h3>
+    <p>Use <code>.flex-column-reverse</code> to display flex items vertically but in reverse order.</p>
+    <div class="d-flex flex-column-reverse bg-secondary text-white mb-3">
+      <div class="p-2 bg-info">Flex item 1</div>
+      <div class="p-2 bg-warning">Flex item 2</div>
+      <div class="p-2 bg-primary">Flex item 3</div>
+    </div>
+
+    <!-- JUSTIFY CONTENT -->
+    <h2 class="mt-5">Justify Content</h2>
+    <p>The <code>.justify-content-*</code> classes are used to align flex items horizontally along the main axis. Valid classes are <code>start</code> (default), <code>end</code>, <code>center</code>, <code>between</code>, and <code>around</code>.</p>
+
+    <h3>Start (Default)</h3>
+    <p>Use <code>.justify-content-start</code> to align items from the left (default).</p>
+    <div class="d-flex justify-content-start bg-secondary text-white mb-3">
+      <div class="p-2 bg-info">Item 1</div>
+      <div class="p-2 bg-warning">Item 2</div>
+      <div class="p-2 bg-primary">Item 3</div>
+    </div>
+
+    <h3>End</h3>
+    <p>Use <code>.justify-content-end</code> to align items to the right.</p>
+    <div class="d-flex justify-content-end bg-secondary text-white mb-3">
+      <div class="p-2 bg-info">Item 1</div>
+      <div class="p-2 bg-warning">Item 2</div>
+      <div class="p-2 bg-primary">Item 3</div>
+    </div>
+
+    <h3>Center</h3>
+    <p>Use <code>.justify-content-center</code> to center align items.</p>
+    <div class="d-flex justify-content-center bg-secondary text-white mb-3">
+      <div class="p-2 bg-info">Item 1</div>
+      <div class="p-2 bg-warning">Item 2</div>
+      <div class="p-2 bg-primary">Item 3</div>
+    </div>
+
+    <h3>Between</h3>
+    <p>Use <code>.justify-content-between</code> to distribute items evenly with equal space between them. First item is on the left, last item is on the right.</p>
+    <div class="d-flex justify-content-between bg-secondary text-white mb-3">
+      <div class="p-2 bg-info">Item 1</div>
+      <div class="p-2 bg-warning">Item 2</div>
+      <div class="p-2 bg-primary">Item 3</div>
+    </div>
+
+    <h3>Around</h3>
+    <p>Use <code>.justify-content-around</code> to distribute items evenly with equal space around them (including the edges).</p>
+    <div class="d-flex justify-content-around bg-secondary text-white mb-3">
+      <div class="p-2 bg-info">Item 1</div>
+      <div class="p-2 bg-warning">Item 2</div>
+      <div class="p-2 bg-primary">Item 3</div>
+    </div>
+
+    <!-- FILL / EQUAL WIDTHS -->
+    <h2 class="mt-5">Fill / Equal Widths</h2>
+    <p>Use the <code>.flex-fill</code> class on flex items to force them into equal widths. Each item will take up equal space regardless of content.</p>
+    <div class="d-flex bg-secondary text-white mb-3">
+      <div class="p-2 bg-info flex-fill">Flex item 1</div>
+      <div class="p-2 bg-warning flex-fill">Flex item 2</div>
+      <div class="p-2 bg-primary flex-fill">Flex item 3</div>
+    </div>
+
+    <!-- GROW -->
+    <h2 class="mt-5">Flex Grow</h2>
+    <p>Use <code>.flex-grow-1</code> on a flex item to make it take up the rest of the available space in the flex container. Other items will take their necessary space, and the flex-grow item will expand to fill remaining space.</p>
+    <div class="d-flex bg-secondary text-white mb-3">
+      <div class="p-2 bg-info">Flex item 1</div>
+      <div class="p-2 bg-warning">Flex item 2</div>
+      <div class="p-2 bg-primary flex-grow-1">Flex item 3 (grows)</div>
+    </div>
+
+    <!-- SHRINK -->
+    <h2 class="mt-5">Flex Shrink</h2>
+    <p>Use <code>.flex-shrink-1</code> on a flex item to make it shrink if necessary when the container is too small. By default, flex items don't shrink below their content size.</p>
+    <div class="d-flex bg-secondary text-white mb-3">
+      <div class="p-2 bg-info flex-shrink-1">Shrink item</div>
+      <div class="p-2 bg-warning">Item 2</div>
+      <div class="p-2 bg-primary">Item 3</div>
+    </div>
+
+    <!-- ORDER -->
+    <h2 class="mt-5">Order</h2>
+    <p>Change the visual order of specific flex items with the <code>.order-</code> classes. Valid classes are <code>.order-0</code> to <code>.order-5</code>, where the lowest number has the highest priority. The default order is 0.</p>
+    <div class="d-flex bg-secondary text-white mb-3">
+      <div class="p-2 bg-info order-3">Order 3 (Flex item 1)</div>
+      <div class="p-2 bg-warning order-1">Order 1 (Flex item 2)</div>
+      <div class="p-2 bg-primary order-2">Order 2 (Flex item 3)</div>
+    </div>
+    <p><small>Note: The visual order is 2, 3, 1 instead of 1, 2, 3</small></p>
+
+    <!-- AUTO MARGINS -->
+    <h2 class="mt-5">Auto Margins</h2>
+    <p>Use <code>.ms-auto</code> (margin-start) to push flex items to the right, or <code>.me-auto</code> (margin-end) to push items to the left.</p>
+
+    <h3>Push Items to Right (ms-auto)</h3>
+    <div class="d-flex bg-secondary text-white mb-3">
+      <div class="p-2 bg-info ms-auto">Pushed right</div>
+      <div class="p-2 bg-warning">Item 2</div>
+      <div class="p-2 bg-primary">Item 3</div>
+    </div>
+
+    <h3>Push Items to Left (me-auto)</h3>
+    <div class="d-flex bg-secondary text-white mb-3">
+      <div class="p-2 bg-info">Item 1</div>
+      <div class="p-2 bg-warning">Item 2</div>
+      <div class="p-2 bg-primary me-auto">Pushed left</div>
+    </div>
+
+    <!-- WRAP -->
+    <h2 class="mt-5">Flex Wrap</h2>
+    <p>By default, flex items won't wrap if the container is too small. Use the <code>.flex-wrap</code> class to allow items to wrap, <code>.flex-wrap-reverse</code> to reverse the wrapping, or <code>.flex-nowrap</code> (default) to prevent wrapping.</p>
+
+    <h3>No Wrap (Default)</h3>
+    <p>Items will shrink to fit in one line. Items won't move to the next line; they'll stay on one line even if the container is too small (you may need to scroll horizontally to see all items).</p>
+    <div class="d-flex flex-nowrap bg-secondary text-white mb-3" style="width: 300px; overflow-x: auto;">
+      <div class="p-2 bg-info flex-shrink-0">Item 1</div>
+      <div class="p-2 bg-warning flex-shrink-0">Item 2</div>
+      <div class="p-2 bg-primary flex-shrink-0">Item 3</div>
+      <div class="p-2 bg-success flex-shrink-0">Item 4</div>
+      <div class="p-2 bg-danger flex-shrink-0">Item 5</div>
+      <div class="p-2 bg-secondary flex-shrink-0">Item 6</div>
+      <div class="p-2 bg-info flex-shrink-0">Item 7</div>
+      <div class="p-2 bg-warning flex-shrink-0">Item 8</div>
+    </div>
+
+    <h3>Wrap</h3>
+    <p>Use <code>.flex-wrap</code> to allow items to wrap to the next line. When the container is too small, items will automatically move to the next line instead of shrinking.</p>
+    <div class="d-flex flex-wrap bg-secondary text-white mb-3" style="width: 300px;">
+      <div class="p-2 bg-info">Item 1</div>
+      <div class="p-2 bg-warning">Item 2</div>
+      <div class="p-2 bg-primary">Item 3</div>
+      <div class="p-2 bg-success">Item 4</div>
+      <div class="p-2 bg-danger">Item 5</div>
+      <div class="p-2 bg-secondary">Item 6</div>
+      <div class="p-2 bg-info">Item 7</div>
+      <div class="p-2 bg-warning">Item 8</div>
+    </div>
+
+    <h3>Wrap Reverse</h3>
+    <p>Use <code>.flex-wrap-reverse</code> to wrap items but in reverse order. The first row of wrapped items will appear at the bottom, and subsequent rows will stack upward.</p>
+    <div class="d-flex flex-wrap-reverse bg-secondary text-white mb-3" style="width: 300px;">
+      <div class="p-2 bg-info">Item 1</div>
+      <div class="p-2 bg-warning">Item 2</div>
+      <div class="p-2 bg-primary">Item 3</div>
+      <div class="p-2 bg-success">Item 4</div>
+      <div class="p-2 bg-danger">Item 5</div>
+      <div class="p-2 bg-secondary">Item 6</div>
+      <div class="p-2 bg-info">Item 7</div>
+      <div class="p-2 bg-warning">Item 8</div>
+    </div>
+
+    <!-- ALIGN CONTENT -->
+    <h2 class="mt-5">Align Content</h2>
+    <p>The <code>.align-content-*</code> classes control the vertical alignment of gathered (wrapped) flex items. These classes only work with multiple rows of items and <code>.flex-wrap</code>. Valid classes are <code>start</code>, <code>end</code>, <code>center</code>, <code>around</code>, and <code>stretch</code>.</p>
+
+    <h3>Align Content Start</h3>
+    <p>Use <code>.align-content-start</code> to align wrapped items from the top.</p>
+    <div class="d-flex flex-wrap align-content-start bg-secondary text-white mb-3" style="height: 250px;">
+      <div class="p-2 bg-info" style="width: 25%;">Item 1</div>
+      <div class="p-2 bg-warning" style="width: 25%;">Item 2</div>
+      <div class="p-2 bg-primary" style="width: 25%;">Item 3</div>
+      <div class="p-2 bg-success" style="width: 25%;">Item 4</div>
+    </div>
+
+    <h3>Align Content End</h3>
+    <p>Use <code>.align-content-end</code> to align wrapped items from the bottom.</p>
+    <div class="d-flex flex-wrap align-content-end bg-secondary text-white mb-3" style="height: 250px;">
+      <div class="p-2 bg-info" style="width: 25%;">Item 1</div>
+      <div class="p-2 bg-warning" style="width: 25%;">Item 2</div>
+      <div class="p-2 bg-primary" style="width: 25%;">Item 3</div>
+      <div class="p-2 bg-success" style="width: 25%;">Item 4</div>
+    </div>
+
+    <h3>Align Content Center</h3>
+    <p>Use <code>.align-content-center</code> to align wrapped items in the center vertically.</p>
+    <div class="d-flex flex-wrap align-content-center bg-secondary text-white mb-3" style="height: 250px;">
+      <div class="p-2 bg-info" style="width: 25%;">Item 1</div>
+      <div class="p-2 bg-warning" style="width: 25%;">Item 2</div>
+      <div class="p-2 bg-primary" style="width: 25%;">Item 3</div>
+      <div class="p-2 bg-success" style="width: 25%;">Item 4</div>
+    </div>
+
+    <h3>Align Content Around</h3>
+    <p>Use <code>.align-content-around</code> to distribute wrapped items with equal space around them.</p>
+    <div class="d-flex flex-wrap align-content-around bg-secondary text-white mb-3" style="height: 250px;">
+      <div class="p-2 bg-info" style="width: 25%;">Item 1</div>
+      <div class="p-2 bg-warning" style="width: 25%;">Item 2</div>
+      <div class="p-2 bg-primary" style="width: 25%;">Item 3</div>
+      <div class="p-2 bg-success" style="width: 25%;">Item 4</div>
+    </div>
+
+    <h3>Align Content Stretch</h3>
+    <p>Use <code>.align-content-stretch</code> to stretch wrapped items to fill available space (default).</p>
+    <div class="d-flex flex-wrap align-content-stretch bg-secondary text-white mb-3" style="height: 250px;">
+      <div class="p-2 bg-info" style="width: 25%;">Item 1</div>
+      <div class="p-2 bg-warning" style="width: 25%;">Item 2</div>
+      <div class="p-2 bg-primary" style="width: 25%;">Item 3</div>
+      <div class="p-2 bg-success" style="width: 25%;">Item 4</div>
+    </div>
+
+    <!-- ALIGN ITEMS -->
+    <h2 class="mt-5">Align Items</h2>
+    <p>The <code>.align-items-*</code> classes control the vertical alignment of a single row of flex items. Valid classes are <code>start</code>, <code>end</code>, <code>center</code>, <code>baseline</code>, and <code>stretch</code> (default).</p>
+
+    <h3>Align Items Start</h3>
+    <p>Use <code>.align-items-start</code> to align items from the top of the flex container.</p>
+    <div class="d-flex align-items-start bg-secondary text-white mb-3" style="height: 120px;">
+      <div class="p-2 bg-info">Item 1</div>
+      <div class="p-2 bg-warning">Item 2</div>
+      <div class="p-2 bg-primary">Item 3</div>
+    </div>
+
+    <h3>Align Items End</h3>
+    <p>Use <code>.align-items-end</code> to align items to the bottom of the flex container.</p>
+    <div class="d-flex align-items-end bg-secondary text-white mb-3" style="height: 120px;">
+      <div class="p-2 bg-info">Item 1</div>
+      <div class="p-2 bg-warning">Item 2</div>
+      <div class="p-2 bg-primary">Item 3</div>
+    </div>
+
+    <h3>Align Items Center</h3>
+    <p>Use <code>.align-items-center</code> to vertically center align items in the flex container.</p>
+    <div class="d-flex align-items-center bg-secondary text-white mb-3" style="height: 120px;">
+      <div class="p-2 bg-info">Item 1</div>
+      <div class="p-2 bg-warning">Item 2</div>
+      <div class="p-2 bg-primary">Item 3</div>
+    </div>
+
+    <h3>Align Items Baseline</h3>
+    <p>Use <code>.align-items-baseline</code> to align items along their text baselines.</p>
+    <div class="d-flex align-items-baseline bg-secondary text-white mb-3" style="height: 120px;">
+      <div class="p-2 bg-info">Item 1</div>
+      <div class="p-2 bg-warning">Item 2</div>
+      <div class="p-2 bg-primary">Item 3</div>
+    </div>
+
+    <h3>Align Items Stretch</h3>
+    <p>Use <code>.align-items-stretch</code> to stretch items to fill the container (default).</p>
+    <div class="d-flex align-items-stretch bg-secondary text-white mb-3" style="height: 120px;">
+      <div class="p-2 bg-info">Item 1</div>
+      <div class="p-2 bg-warning">Item 2</div>
+      <div class="p-2 bg-primary">Item 3</div>
+    </div>
+
+    <!-- ALIGN SELF -->
+    <h2 class="mt-5">Align Self</h2>
+    <p>The <code>.align-self-*</code> classes control the vertical alignment of a specific flex item. Valid classes are <code>start</code>, <code>end</code>, <code>center</code>, <code>baseline</code>, <code>stretch</code>, and default (which is the alignment set by <code>.align-items-*</code> on the parent, or stretch if no align-items is set).</p>
+    <div class="d-flex bg-light mb-3" style="height: 150px;">
+      <div class="p-2 border">Item 1 (default - follows align-items)</div>
+      <div class="p-2 border align-self-start">Item 2 (align-self-start)</div>
+      <div class="p-2 border align-self-center">Item 3 (align-self-center)</div>
+      <div class="p-2 border align-self-end">Item 4 (align-self-end)</div>
+      <div class="p-2 border align-self-stretch">Item 5 (align-self-stretch)</div>
+    </div>
+
+    <!-- RESPONSIVE FLEX CLASSES -->
+    <h2 class="mt-5">Responsive Flex Classes</h2>
+    <p>All flex classes come with additional responsive classes, making it easy to set a specific flex class on specific screen sizes. The <code>*</code> symbol can be replaced with <code>sm</code>, <code>md</code>, <code>lg</code>, <code>xl</code>, or <code>xxl</code>.</p>
+
+    <h3>Examples of Responsive Flex Classes:</h3>
+    <ul>
+      <li><code>.d-md-flex</code> - Display flex on medium screens and larger</li>
+      <li><code>.flex-md-row</code> - Flex row direction on medium screens and larger</li>
+      <li><code>.flex-lg-column</code> - Flex column direction on large screens and larger</li>
+      <li><code>.justify-content-md-center</code> - Center justify content on medium screens and larger</li>
+      <li><code>.align-items-lg-center</code> - Center align items on large screens and larger</li>
+      <li><code>.flex-wrap-md</code> - Wrap items on medium screens and larger</li>
+      <li><code>.order-md-1</code> - Change order on medium screens and larger</li>
+    </ul>
+
+    <h3>Responsive Example</h3>
+    <p>This container is a flex column on small screens and a flex row on medium screens and larger.</p>
+    <div class="d-flex flex-column flex-md-row bg-secondary text-white mb-3">
+      <div class="p-2 bg-info flex-md-fill">Item 1</div>
+      <div class="p-2 bg-warning flex-md-fill">Item 2</div>
+      <div class="p-2 bg-primary flex-md-fill">Item 3</div>
+    </div>
+
+  </body>
+</html>
