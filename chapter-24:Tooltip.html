@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Chapter 24: Bootstrap 5 Tooltip</title>
+  </head>
+  <body class="container mt-5">
+    <h1>Bootstrap 5 Tooltip</h1>
+    <p>The Tooltip component is a small pop-up box that appears when the user moves the mouse pointer over an element.</p>
+    <h2>How to create a tooltip</h2>
+    <p>To create a tooltip, add the <code>data-bs-toggle="tooltip"</code> attribute to an element.</p>
+    <p>Use the <code>title</code> attribute to specify the text that should be displayed inside the tooltip:</p>
+    <button type="button" class="btn btn-primary" data-bs-toggle="tooltip" title="Hooray!">Hover over me!</button>
+    <h2 class="mt-3">Positioning Tooltips</h2>
+    <p>By default, the tooltip will appear on top fo the element.</p>
+    <a href="#" data-bs-toggle="tooltip" data-bs-placement="top" title="Hooray!">Hover</a>
+    <a href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Hooray!">Hover</a>
+    <a href="#" data-bs-toggle="tooltip" data-bs-placement="left" title="Hooray!">Hover</a>
+    <a href="#" data-bs-toggle="tooltip" data-bs-placement="right" title="Hooray!">Hover</a>
+    <script>
+      var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+      var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+      })
+    </script>
+    
+  </body>
+</html>
