@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap 5 Form Validation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body>
+    <div class="container mt-5 mb-5">
+      <h1>Bootstrap 5 Form Validation - Complete Guide</h1>
+      
+      <!-- Introduction Section -->
+      <section class="mt-5">
+        <h2>Introduction to Form Validation</h2>
+        <p>Form validation is the process of checking user input to ensure it meets specific requirements before submission. Bootstrap 5 provides built-in CSS and JavaScript support for form validation with visual feedback.</p>
+        
+        <h4>Types of Validation:</h4>
+        <ul>
+          <li><strong>Client-side Validation:</strong> Validates input in the browser before sending to server (immediate feedback)</li>
+          <li><strong>Server-side Validation:</strong> Validates input on the server (more secure, always required)</li>
+          <li><strong>HTML5 Native Validation:</strong> Uses HTML5 input attributes like required, pattern, min, max</li>
+          <li><strong>JavaScript Validation:</strong> Custom validation logic using JavaScript</li>
+        </ul>
+
+        <h4>Why Validate Forms?</h4>
+        <ul>
+          <li>Improve user experience with immediate feedback</li>
+          <li>Prevent invalid data from being submitted</li>
+          <li>Increase data quality and accuracy</li>
+          <li>Reduce server load by filtering invalid data early</li>
+          <li>Enhance security by validating on both client and server</li>
+        </ul>
+      </section>
+
+      <!-- Bootstrap Validation Classes -->
+      <section class="mt-5">
+        <h2>Bootstrap Validation Classes</h2>
+        <p>Bootstrap provides CSS classes to display validation states visually. These classes automatically style form controls based on their validation status.</p>
+
+        <h4>Key Validation Classes:</h4>
+        <table class="table table-bordered">
+          <thead class="table-dark">
+            <tr>
+              <th>Class</th>
+              <th>Purpose</th>
+              <th>Applied To</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>.was-validated</code></td>
+              <td>Applied to form to show validation states after submission</td>
+              <td>Form element (&lt;form&gt;)</td>
+            </tr>
+            <tr>
+              <td><code>.is-valid</code></td>
+              <td>Shows input as valid (green border and checkmark)</td>
+              <td>Form control (&lt;input&gt;, &lt;select&gt;, &lt;textarea&gt;)</td>
+            </tr>
+            <tr>
+              <td><code>.is-invalid</code></td>
+              <td>Shows input as invalid (red border and icon)</td>
+              <td>Form control (&lt;input&gt;, &lt;select&gt;, &lt;textarea&gt;)</td>
+            </tr>
+            <tr>
+              <td><code>.valid-feedback</code></td>
+              <td>Success message shown when input is valid</td>
+              <td>Div element after form control</td>
+            </tr>
+            <tr>
+              <td><code>.invalid-feedback</code></td>
+              <td>Error message shown when input is invalid</td>
+              <td>Div element after form control</td>
+            </tr>
+            <tr>
+              <td><code>.valid-tooltip</code></td>
+              <td>Success message displayed as tooltip</td>
+              <td>Div element after form control</td>
+            </tr>
+            <tr>
+              <td><code>.invalid-tooltip</code></td>
+              <td>Error message displayed as tooltip</td>
+              <td>Div element after form control</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- HTML5 Validation Attributes -->
+      <section class="mt-5">
+        <h2>HTML5 Validation Attributes</h2>
+        <p>HTML5 provides native input attributes for client-side validation. These work with Bootstrap validation classes.</p>
+
+        <h4>Common HTML5 Validation Attributes:</h4>
+        <table class="table table-bordered">
+          <thead class="table-dark">
+            <tr>
+              <th>Attribute</th>
+              <th>Purpose</th>
+              <th>Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>required</code></td>
+              <td>Field must not be empty</td>
+              <td><code>required</code></td>
+            </tr>
+            <tr>
+              <td><code>type</code></td>
+              <td>Validates input format (email, number, url, etc.)</td>
+              <td><code>type="email"</code></td>
+            </tr>
+            <tr>
+              <td><code>pattern</code></td>
+              <td>Validates against regex pattern</td>
+              <td><code>pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"</code></td>
+            </tr>
+            <tr>
+              <td><code>minlength</code></td>
+              <td>Minimum number of characters</td>
+              <td><code>minlength="8"</code></td>
+            </tr>
+            <tr>
+              <td><code>maxlength</code></td>
+              <td>Maximum number of characters</td>
+              <td><code>maxlength="50"</code></td>
+            </tr>
+            <tr>
+              <td><code>min</code></td>
+              <td>Minimum numeric value</td>
+              <td><code>min="18"</code></td>
+            </tr>
+            <tr>
+              <td><code>max</code></td>
+              <td>Maximum numeric value</td>
+              <td><code>max="100"</code></td>
+            </tr>
+            <tr>
+              <td><code>step</code></td>
+              <td>Valid increment for number inputs</td>
+              <td><code>step="0.01"</code></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Basic Form Validation Example -->
+      <section class="mt-5">
+        <h2>1. Basic Form Validation</h2>
+        <p>The simplest form validation uses HTML5 attributes and Bootstrap CSS classes. The form shows validation states after the user interacts with inputs.</p>
+
+        <h4>Example: Simple Login Form</h4>
+        <p><strong>Try submitting the form without filling fields or with invalid email!</strong></p>
+        <form class="needs-validation" id="basicForm" novalidate>
+          <div class="mb-3">
+            <label for="basicEmail" class="form-label">Email Address (required)</label>
+            <input type="email" class="form-control" id="basicEmail" placeholder="name@example.com" required>
+            <div class="invalid-feedback">
+              Please provide a valid email address.
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="basicPassword" class="form-label">Password (minimum 8 characters)</label>
+            <input type="password" class="form-control" id="basicPassword" placeholder="Password" minlength="8" required>
+            <div class="invalid-feedback">
+              Password must be at least 8 characters long.
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+
+        <h6 class="mt-4">How it works:</h6>
+        <ul>
+          <li><code>.needs-validation</code> class on the form enables validation</li>
+          <li><code>novalidate</code> attribute prevents browser default validation (allows Bootstrap styling)</li>
+          <li><code>.invalid-feedback</code> div displays error messages</li>
+          <li>JavaScript checks form validity on submit</li>
+        </ul>
+      </section>
+
+      <!-- Valid and Invalid Feedback -->
+      <section class="mt-5">
+        <h2>2. Valid and Invalid Feedback</h2>
+        <p>Bootstrap supports both success (valid) and error (invalid) feedback messages that display based on the input's validation state.</p>
+
+        <h4>Example: With Both Valid and Invalid Feedback</h4>
+        <form class="needs-validation" id="feedbackForm" novalidate>
+          <div class="mb-3">
+            <label for="feedbackEmail" class="form-label">Email Address</label>
+            <input type="email" class="form-control" id="feedbackEmail" placeholder="name@example.com" required>
+            <div class="valid-feedback">
+              ✓ Email looks good!
+            </div>
+            <div class="invalid-feedback">
+              ✗ Please provide a valid email address.
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="feedbackUsername" class="form-label">Username (3-20 characters)</label>
+            <input type="text" class="form-control" id="feedbackUsername" placeholder="username" minlength="3" maxlength="20" required>
+            <div class="valid-feedback">
+              ✓ Username is valid!
+            </div>
+            <div class="invalid-feedback">
+              ✗ Username must be 3-20 characters.
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+        <h6 class="mt-4">Key Points:</h6>
+        <ul>
+          <li><code>.valid-feedback</code> shows green checkmark when input is valid</li>
+          <li><code>.invalid-feedback</code> shows red error message when input is invalid</li>
+          <li>Feedback messages are hidden by default and shown based on validation state</li>
+        </ul>
+      </section>
+
+      <!-- Validation with Different Input Types -->
+      <section class="mt-5">
+        <h2>3. Validation with Different Input Types</h2>
+        <p>Bootstrap validation works with all form control types. Each type has specific validation requirements.</p>
+
+        <h4>Example: Multiple Input Types</h4>
+        <form class="needs-validation" id="multiTypeForm" novalidate>
+          <div class="mb-3">
+            <label for="typeEmail" class="form-label">Email (type: email)</label>
+            <input type="email" class="form-control" id="typeEmail" placeholder="user@example.com" required>
+            <div class="invalid-feedback">Please provide a valid email.</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="typeNumber" class="form-label">Age (type: number, 1-120)</label>
+            <input type="number" class="form-control" id="typeNumber" min="1" max="120" required>
+            <div class="invalid-feedback">Please enter a valid age (1-120).</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="typeUrl" class="form-label">Website (type: url)</label>
+            <input type="url" class="form-control" id="typeUrl" placeholder="https://example.com" required>
+            <div class="invalid-feedback">Please provide a valid URL.</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="typePhone" class="form-label">Phone (pattern: ###-###-####)</label>
+            <input type="tel" class="form-control" id="typePhone" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+            <div class="invalid-feedback">Please use format: 123-456-7890</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="typeSelect" class="form-label">Select an option (required)</label>
+            <select class="form-select" id="typeSelect" required>
+              <option selected disabled value="">-- Choose an option --</option>
+              <option value="1">Option 1</option>
+              <option value="2">Option 2</option>
+              <option value="3">Option 3</option>
+            </select>
+            <div class="invalid-feedback">Please select an option.</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="typeTextarea" class="form-label">Message (5-500 characters)</label>
+            <textarea class="form-control" id="typeTextarea" placeholder="Enter your message" minlength="5" maxlength="500" rows="4" required></textarea>
+            <div class="invalid-feedback">Message must be 5-500 characters.</div>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </section>
+
+      <!-- Validation Tooltips -->
+      <section class="mt-5">
+        <h2>4. Validation Tooltips</h2>
+        <p>Tooltips display validation messages inline with inputs, which can save vertical space compared to block-level feedback messages.</p>
+
+        <h4>Example: Tooltip Feedback</h4>
+        <form class="tooltip-form needs-validation" id="tooltipForm" novalidate>
+          <div class="mb-3">
+            <label for="tooltipEmail" class="form-label">Email Address</label>
+            <div class="input-group">
+              <input type="email" class="form-control" id="tooltipEmail" placeholder="name@example.com" required>
+              <div class="invalid-tooltip">
+                Please provide a valid email address.
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="tooltipUsername" class="form-label">Username</label>
+            <div class="input-group">
+              <span class="input-group-text">@</span>
+              <input type="text" class="form-control" id="tooltipUsername" placeholder="username" minlength="3" required>
+              <div class="invalid-tooltip">
+                Username must be at least 3 characters.
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+        <h6 class="mt-4">Key Points:</h6>
+        <ul>
+          <li>Use <code>.invalid-tooltip</code> instead of <code>.invalid-feedback</code></li>
+          <li>Tooltips display inline and don't add extra vertical space</li>
+          <li>Useful for compact forms or space-constrained layouts</li>
+          <li>Works well with input groups</li>
+        </ul>
+      </section>
+
+      <!-- Checkbox and Radio Validation -->
+      <section class="mt-5">
+        <h2>5. Checkbox and Radio Button Validation</h2>
+        <p>Form controls like checkboxes and radio buttons can also be validated using Bootstrap classes.</p>
+
+        <h4>Example: Checkbox Validation</h4>
+        <form class="needs-validation" id="checkboxForm" novalidate>
+          <div class="mb-3">
+            <h6>Select at least one interest:</h6>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="interest1" value="sports" required>
+              <label class="form-check-label" for="interest1">Sports</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="interest2" value="music" required>
+              <label class="form-check-label" for="interest2">Music</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="interest3" value="reading" required>
+              <label class="form-check-label" for="interest3">Reading</label>
+            </div>
+            <div class="invalid-feedback" style="display: block;">
+              Please select at least one interest.
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <h6>Agree to terms:</h6>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="termsCheckbox" required>
+              <label class="form-check-label" for="termsCheckbox">I agree to the terms and conditions</label>
+              <div class="invalid-feedback">
+                You must agree to the terms and conditions.
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </section>
+
+      <!-- Radio Button Validation -->
+      <section class="mt-5">
+        <h2>6. Radio Button Validation</h2>
+        <p>Validate radio button groups to ensure users select an option.</p>
+
+        <h4>Example: Radio Button Validation</h4>
+        <form class="needs-validation" id="radioForm" novalidate>
+          <div class="mb-3">
+            <h6>Choose your subscription plan:</h6>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="plan" id="planFree" value="free" required>
+              <label class="form-check-label" for="planFree">Free Plan</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="plan" id="planPro" value="pro" required>
+              <label class="form-check-label" for="planPro">Pro Plan ($9.99/month)</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="plan" id="planEnterprise" value="enterprise" required>
+              <label class="form-check-label" for="planEnterprise">Enterprise Plan</label>
+            </div>
+            <div class="invalid-feedback" style="display: block;">
+              Please select a plan.
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </section>
+
+      <!-- Complex Form Validation -->
+      <section class="mt-5">
+        <h2>7. Complete Registration Form Example</h2>
+        <p>A comprehensive example combining multiple validation techniques.</p>
+
+        <form class="needs-validation" id="registrationForm" novalidate>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="firstName" class="form-label">First Name</label>
+              <input type="text" class="form-control" id="firstName" placeholder="John" minlength="2" required>
+              <div class="invalid-feedback">
+                First name is required and must be at least 2 characters.
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="lastName" class="form-label">Last Name</label>
+              <input type="text" class="form-control" id="lastName" placeholder="Doe" minlength="2" required>
+              <div class="invalid-feedback">
+                Last name is required and must be at least 2 characters.
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="regEmail" class="form-label">Email Address</label>
+            <input type="email" class="form-control" id="regEmail" placeholder="name@example.com" required>
+            <div class="invalid-feedback">
+              Please provide a valid email address.
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="regPassword" class="form-label">Password (min 8 characters, must contain uppercase, lowercase, number)</label>
+            <input type="password" class="form-control" id="regPassword" placeholder="Password" minlength="8" required>
+            <div class="invalid-feedback">
+              Password must be at least 8 characters long.
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="regConfirm" class="form-label">Confirm Password</label>
+            <input type="password" class="form-control" id="regConfirm" placeholder="Confirm Password" minlength="8" required>
+            <div class="invalid-feedback">
+              Passwords do not match.
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="regPhone" class="form-label">Phone Number</label>
+              <input type="tel" class="form-control" id="regPhone" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+              <div class="invalid-feedback">
+                Please use format: 123-456-7890
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="regAge" class="form-label">Age (18+)</label>
+              <input type="number" class="form-control" id="regAge" min="18" max="120" required>
+              <div class="invalid-feedback">
+                You must be at least 18 years old.
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="regCountry" class="form-label">Country</label>
+            <select class="form-select" id="regCountry" required>
+              <option selected disabled value="">-- Choose a country --</option>
+              <option value="us">United States</option>
+              <option value="uk">United Kingdom</option>
+              <option value="ca">Canada</option>
+              <option value="au">Australia</option>
+            </select>
+            <div class="invalid-feedback">
+              Please select a country.
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="regBio" class="form-label">Bio (50-500 characters)</label>
+            <textarea class="form-control" id="regBio" placeholder="Tell us about yourself" minlength="50" maxlength="500" rows="4" required></textarea>
+            <div class="invalid-feedback">
+              Bio must be between 50-500 characters.
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="regTerms" required>
+              <label class="form-check-label" for="regTerms">
+                I agree to the terms and conditions
+              </label>
+              <div class="invalid-feedback">
+                You must agree to the terms and conditions.
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="regNewsletter">
+              <label class="form-check-label" for="regNewsletter">
+                Subscribe to our newsletter
+              </label>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg w-100">Create Account</button>
+          <button type="reset" class="btn btn-secondary btn-lg w-100 mt-2">Clear Form</button>
+        </form>
+      </section>
+
+      <!-- JavaScript Validation -->
+      <section class="mt-5">
+        <h2>8. Custom JavaScript Validation</h2>
+        <p>Beyond HTML5 validation, you can add custom JavaScript validation for more complex rules.</p>
+
+        <h4>Password Strength Validator Example:</h4>
+        <form class="needs-validation" id="passwordForm" novalidate>
+          <div class="mb-3">
+            <label for="advPassword" class="form-label">Password (Must contain: uppercase, lowercase, number, special character)</label>
+            <input type="password" class="form-control" id="advPassword" placeholder="Enter password" required>
+            <div id="passwordStrength" class="mt-2">
+              <div class="progress" style="height: 5px;">
+                <div id="passwordBar" class="progress-bar" role="progressbar" style="width: 0%"></div>
+              </div>
+              <small id="passwordMessage" class="text-muted">Password strength: <span id="strengthText">None</span></small>
+            </div>
+            <div class="invalid-feedback">
+              Password must contain uppercase, lowercase, number, and special character.
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+        <h6 class="mt-4">How Custom Validation Works:</h6>
+        <pre><code>// Get the form
+const form = document.getElementById('passwordForm');
+
+// Add submit event listener
+form.addEventListener('submit', function(e) {
+  if (!form.checkValidity() === false) {
+    e.preventDefault();
+    e.stopPropagation();
+  }
+  form.classList.add('was-validated');
+});
+
+// Real-time password strength check
+const passwordInput = document.getElementById('advPassword');
+passwordInput.addEventListener('input', function() {
+  const password = this.value;
+  let strength = 0;
+  
+  // Check for lowercase
+  if (/[a-z]/.test(password)) strength++;
+  // Check for uppercase
+  if (/[A-Z]/.test(password)) strength++;
+  // Check for numbers
+  if (/[0-9]/.test(password)) strength++;
+  // Check for special characters
+  if (/[!@#$%^&*]/.test(password)) strength++;
+  
+  // Update progress bar
+  const bar = document.getElementById('passwordBar');
+  const text = document.getElementById('strengthText');
+  
+  if (strength === 0) {
+    bar.style.width = '0%';
+    text.textContent = 'None';
+    bar.className = 'progress-bar';
+  } else if (strength === 1) {
+    bar.style.width = '25%';
+    text.textContent = 'Weak';
+    bar.className = 'progress-bar bg-danger';
+  } else if (strength === 2) {
+    bar.style.width = '50%';
+    text.textContent = 'Fair';
+    bar.className = 'progress-bar bg-warning';
+  } else if (strength === 3) {
+    bar.style.width = '75%';
+    text.textContent = 'Good';
+    bar.className = 'progress-bar bg-info';
+  } else {
+    bar.style.width = '100%';
+    text.textContent = 'Strong';
+    bar.className = 'progress-bar bg-success';
+  }
+});</code></pre>
+      </section>
+
+      <!-- Validation Best Practices -->
+      <section class="mt-5">
+        <h2>9. Validation Best Practices</h2>
+        <ul>
+          <li><strong>Always validate server-side:</strong> Client-side validation is just for UX; always validate on the server</li>
+          <li><strong>Provide clear feedback:</strong> Users should understand why validation failed</li>
+          <li><strong>Validate early:</strong> Check fields as users interact, not just on submit</li>
+          <li><strong>Use appropriate input types:</strong> email, number, tel, url trigger device keyboards</li>
+          <li><strong>Use HTML5 attributes:</strong> required, pattern, min, max are semantic and accessible</li>
+          <li><strong>Show validation messages:</strong> Clearly indicate which fields have errors</li>
+          <li><strong>Highlight invalid fields:</strong> Use color and icons to mark problematic inputs</li>
+          <li><strong>Allow correction:</strong> Make it easy for users to fix errors and resubmit</li>
+          <li><strong>Test edge cases:</strong> Consider empty inputs, special characters, very long inputs</li>
+          <li><strong>Accessibility:</strong> Use aria-labels and ensure error messages are announced to screen readers</li>
+          <li><strong>Don't over-validate:</strong> Balance security with user experience</li>
+          <li><strong>Use consistent patterns:</strong> Apply same validation rules across similar fields</li>
+        </ul>
+      </section>
+
+      <!-- Common Patterns -->
+      <section class="mt-5">
+        <h2>10. Common Validation Patterns</h2>
+        
+        <h4>Email Pattern:</h4>
+        <code>pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"</code>
+
+        <h4>Phone Pattern (US):</h4>
+        <code>pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"</code>
+
+        <h4>ZIP Code Pattern (US):</h4>
+        <code>pattern="[0-9]{5}(-[0-9]{4})?"</code>
+
+        <h4>URL Pattern:</h4>
+        <code>type="url"</code> (built-in)
+
+        <h4>Credit Card Pattern:</h4>
+        <code>pattern="[0-9]{13,19}"</code>
+
+        <h4>Strong Password Pattern:</h4>
+        <code>pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"</code>
+      </section>
+
+      <!-- Accessibility Considerations -->
+      <section class="mt-5 mb-5">
+        <h2>11. Accessibility in Form Validation</h2>
+        <ul>
+          <li><strong>Use aria-required:</strong> Indicates required fields to screen readers</li>
+          <li><strong>Use aria-invalid:</strong> Announces invalid state to assistive technologies</li>
+          <li><strong>Use aria-describedby:</strong> Associates error messages with inputs</li>
+          <li><strong>Use aria-label:</strong> Provides context when visual labels aren't sufficient</li>
+          <li><strong>Color is not enough:</strong> Use icons or text in addition to color</li>
+          <li><strong>Test with screen readers:</strong> Ensure error messages are announced</li>
+          <li><strong>Keyboard navigation:</strong> Ensure all validation works with keyboard</li>
+          <li><strong>Allow tabbing to error fields:</strong> Make it easy to navigate to problem fields</li>
+        </ul>
+
+        <h4>Example with Accessibility:</h4>
+        <form class="needs-validation" id="accessibleForm" novalidate>
+          <div class="mb-3">
+            <label for="accessEmail" class="form-label">
+              Email Address <span class="text-danger">*</span>
+            </label>
+            <input 
+              type="email" 
+              class="form-control" 
+              id="accessEmail" 
+              placeholder="name@example.com" 
+              aria-required="true"
+              aria-describedby="emailHelp emailError"
+              required>
+            <small id="emailHelp" class="form-text text-muted">
+              We'll never share your email with anyone else.
+            </small>
+            <div id="emailError" class="invalid-feedback" role="alert">
+              Please provide a valid email address.
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </section>
+    </div>
+
+    <script>
+      // Basic Form Validation Script for all forms
+      const forms = document.querySelectorAll('.needs-validation');
+
+      Array.from(forms).forEach(form => {
+        form.addEventListener('submit', function(event) {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+
+      // Password strength validator
+      const passwordInput = document.getElementById('advPassword');
+      if (passwordInput) {
+        passwordInput.addEventListener('input', function() {
+          const password = this.value;
+          let strength = 0;
+
+          // Check for lowercase
+          if (/[a-z]/.test(password)) strength++;
+          // Check for uppercase
+          if (/[A-Z]/.test(password)) strength++;
+          // Check for numbers
+          if (/[0-9]/.test(password)) strength++;
+          // Check for special characters
+          if (/[!@#$%^&*]/.test(password)) strength++;
+
+          const bar = document.getElementById('passwordBar');
+          const text = document.getElementById('strengthText');
+
+          if (strength === 0) {
+            bar.style.width = '0%';
+            text.textContent = 'None';
+            bar.className = 'progress-bar';
+          } else if (strength === 1) {
+            bar.style.width = '25%';
+            text.textContent = 'Weak';
+            bar.className = 'progress-bar bg-danger';
+          } else if (strength === 2) {
+            bar.style.width = '50%';
+            text.textContent = 'Fair';
+            bar.className = 'progress-bar bg-warning';
+          } else if (strength === 3) {
+            bar.style.width = '75%';
+            text.textContent = 'Good';
+            bar.className = 'progress-bar bg-info';
+          } else {
+            bar.style.width = '100%';
+            text.textContent = 'Strong';
+            bar.className = 'progress-bar bg-success';
+          }
+
+          // Check if password meets all requirements
+          if (strength < 4) {
+            passwordInput.classList.add('is-invalid');
+            passwordInput.classList.remove('is-valid');
+          } else {
+            passwordInput.classList.add('is-valid');
+            passwordInput.classList.remove('is-invalid');
+          }
+        });
+      }
+
+      // Confirm password validation
+      const confirmPassword = document.getElementById('regConfirm');
+      if (confirmPassword) {
+        confirmPassword.addEventListener('blur', function() {
+          const password = document.getElementById('regPassword').value;
+          if (this.value !== password) {
+            this.classList.add('is-invalid');
+            this.classList.remove('is-valid');
+          } else {
+            this.classList.add('is-valid');
+            this.classList.remove('is-invalid');
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

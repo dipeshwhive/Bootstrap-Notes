@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap 5 Checkboxes and Radio Buttons</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body>
+    <div class="container mt-5 mb-5">
+      <h1>Bootstrap 5 Checkboxes and Radio Buttons - Complete Notes</h1>
+      
+      <!-- Checkboxes Section -->
+      <section class="mt-5">
+        <h2>1. Checkboxes</h2>
+        <p>Checkboxes are used when you want the user to select any number of options from a list of preset options. Users can select zero, one, or multiple checkboxes.</p>
+        
+        <h4>Structure and Classes:</h4>
+        <ul>
+          <li><code>.form-check</code> - Wrapper container that ensures proper margins for labels and checkboxes</li>
+          <li><code>.form-check-input</code> - Class applied to the checkbox input element for proper styling</li>
+          <li><code>.form-check-label</code> - Class applied to the label element</li>
+          <li><code>checked</code> - HTML attribute to make a checkbox checked by default</li>
+        </ul>
+
+        <h4>Basic Checkbox Example:</h4>
+        <form>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="check1" name="option1" value="something" checked>
+            <label class="form-check-label" for="check1">Option 1 (Checked)</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="check2" name="option2" value="something">
+            <label class="form-check-label" for="check2">Option 2</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="check3" name="option3" value="something">
+            <label class="form-check-label" for="check3">Option 3</label>
+          </div>
+        </form>
+
+        <h4>Disabled Checkbox Example:</h4>
+        <form>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="check4" name="option4" value="something" disabled>
+            <label class="form-check-label" for="check4">Disabled Option</label>
+          </div>
+        </form>
+
+        <h4>Key Points:</h4>
+        <ul>
+          <li>Always wrap checkboxes in a <code>.form-check</code> container</li>
+          <li>Use <code>id</code> on the input and <code>for</code> on the label to link them together</li>
+          <li>Use the <code>checked</code> attribute to pre-select a checkbox</li>
+          <li>Use the <code>disabled</code> attribute to disable a checkbox</li>
+          <li>The <code>name</code> attribute is used for form submission</li>
+        </ul>
+      </section>
+
+      <!-- Radio Buttons Section -->
+      <section class="mt-5">
+        <h2>2. Radio Buttons</h2>
+        <p>Radio buttons are used when you want to limit the user to just one selection from a list of preset options. Only one radio button in a group can be selected at a time.</p>
+        
+        <h4>Structure and Classes:</h4>
+        <ul>
+          <li><code>.form-check</code> - Wrapper container for each radio button</li>
+          <li><code>.form-check-input</code> - Class applied to the radio button input element</li>
+          <li><code>.form-check-label</code> - Class applied to the label element</li>
+          <li><code>name</code> - All radio buttons in a group must have the same <code>name</code> attribute</li>
+          <li><code>checked</code> - HTML attribute to make a radio button selected by default</li>
+        </ul>
+
+        <h4>Basic Radio Button Example:</h4>
+        <form>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="optradio" id="radio1" value="option1" checked>
+            <label class="form-check-label" for="radio1">Option 1 (Selected)</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="optradio" id="radio2" value="option2">
+            <label class="form-check-label" for="radio2">Option 2</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="optradio" id="radio3" value="option3">
+            <label class="form-check-label" for="radio3">Option 3</label>
+          </div>
+        </form>
+
+        <h4>Disabled Radio Button Example:</h4>
+        <form>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="optradio2" id="radio4" value="option4">
+            <label class="form-check-label" for="radio4">Available Option</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="optradio2" id="radio5" value="option5" disabled>
+            <label class="form-check-label" for="radio5">Disabled Option</label>
+          </div>
+        </form>
+
+        <h4>Key Points:</h4>
+        <ul>
+          <li>All radio buttons in a group must have the same <code>name</code> attribute</li>
+          <li>Each radio button must have a unique <code>id</code> and a corresponding label with <code>for</code></li>
+          <li>Only one radio button in a named group can be selected at a time</li>
+          <li>The <code>value</code> attribute specifies what is submitted when that radio button is selected</li>
+          <li>Use <code>checked</code> to pre-select a radio button (should only have one per group)</li>
+          <li>Use <code>disabled</code> to disable a radio button</li>
+        </ul>
+      </section>
+
+      <!-- Toggle Switches Section -->
+      <section class="mt-5">
+        <h2>3. Toggle Switches</h2>
+        <p>Toggle switches are a stylistic variation of checkboxes that look like physical on/off switches. They use a checkbox with the <code>.form-switch</code> class added to the <code>.form-check</code> container.</p>
+        
+        <h4>Structure and Classes:</h4>
+        <ul>
+          <li><code>.form-check</code> - Base wrapper container</li>
+          <li><code>.form-switch</code> - Additional class to style checkbox as a toggle switch</li>
+          <li><code>.form-check-input</code> - Class applied to the checkbox input</li>
+          <li><code>.form-check-label</code> - Class applied to the label element</li>
+        </ul>
+
+        <h4>Basic Toggle Switch Example:</h4>
+        <form>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="mySwitch1" name="darkmode" value="yes" checked>
+            <label class="form-check-label" for="mySwitch1">Dark Mode (Enabled)</label>
+          </div>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="mySwitch2" name="notifications" value="yes">
+            <label class="form-check-label" for="mySwitch2">Enable Notifications</label>
+          </div>
+        </form>
+
+        <h4>Multiple Toggle Switches Example:</h4>
+        <form>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="switch1" name="feature1" value="yes">
+            <label class="form-check-label" for="switch1">Feature 1</label>
+          </div>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="switch2" name="feature2" value="yes" checked>
+            <label class="form-check-label" for="switch2">Feature 2</label>
+          </div>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="switch3" name="feature3" value="yes">
+            <label class="form-check-label" for="switch3">Feature 3</label>
+          </div>
+        </form>
+
+        <h4>Key Points:</h4>
+        <ul>
+          <li>Add <code>.form-switch</code> class to the <code>.form-check</code> container to convert a checkbox to a toggle switch</li>
+          <li>Toggle switches are still checkboxes underneath, so they work the same way in forms</li>
+          <li>Multiple toggle switches are independent and can all be on, all be off, or in any combination</li>
+          <li>Use <code>checked</code> to make a toggle switch appear enabled by default</li>
+          <li>Use <code>disabled</code> to disable a toggle switch</li>
+          <li>The visual design looks like a physical switch which is more intuitive for on/off states</li>
+        </ul>
+
+        <h4>Disabled Toggle Switch Example:</h4>
+        <form>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="disabledSwitch" name="experiment" value="yes" disabled>
+            <label class="form-check-label" for="disabledSwitch">Disabled Toggle Switch</label>
+          </div>
+        </form>
+      </section>
+
+      <!-- Comparison Table -->
+      <section class="mt-5">
+        <h2>Checkboxes vs Radio Buttons vs Toggle Switches</h2>
+        <table class="table table-bordered">
+          <thead class="table-dark">
+            <tr>
+              <th>Feature</th>
+              <th>Checkboxes</th>
+              <th>Radio Buttons</th>
+              <th>Toggle Switches</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Selection Type</strong></td>
+              <td>Multiple selections allowed</td>
+              <td>Single selection only</td>
+              <td>Binary on/off state</td>
+            </tr>
+            <tr>
+              <td><strong>Base HTML Element</strong></td>
+              <td><code>&lt;input type="checkbox"&gt;</code></td>
+              <td><code>&lt;input type="radio"&gt;</code></td>
+              <td><code>&lt;input type="checkbox"&gt;</code></td>
+            </tr>
+            <tr>
+              <td><strong>Bootstrap Classes</strong></td>
+              <td><code>.form-check, .form-check-input</code></td>
+              <td><code>.form-check, .form-check-input</code></td>
+              <td><code>.form-check, .form-switch, .form-check-input</code></td>
+            </tr>
+            <tr>
+              <td><strong>Grouping</strong></td>
+              <td>No grouping required</td>
+              <td>Must have same <code>name</code> attribute</td>
+              <td>No grouping required</td>
+            </tr>
+            <tr>
+              <td><strong>Use Case</strong></td>
+              <td>Multiple options, all may apply</td>
+              <td>Choose one from list</td>
+              <td>Enable/disable a single feature</td>
+            </tr>
+            <tr>
+              <td><strong>Visual Style</strong></td>
+              <td>Square checkboxes</td>
+              <td>Round radio buttons</td>
+              <td>On/off switch appearance</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Key Bootstrap Classes Summary -->
+      <section class="mt-5">
+        <h2>Key Bootstrap Classes Summary</h2>
+        <table class="table table-bordered">
+          <thead class="table-dark">
+            <tr>
+              <th>Class</th>
+              <th>Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>.form-check</code></td>
+              <td>Base wrapper container for checkboxes and radio buttons</td>
+            </tr>
+            <tr>
+              <td><code>.form-check-input</code></td>
+              <td>Styles the checkbox or radio button input element</td>
+            </tr>
+            <tr>
+              <td><code>.form-check-label</code></td>
+              <td>Styles the label element with proper spacing</td>
+            </tr>
+            <tr>
+              <td><code>.form-switch</code></td>
+              <td>Converts a checkbox to a toggle switch (used with .form-check)</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- HTML Attributes Summary -->
+      <section class="mt-5">
+        <h2>HTML Attributes for Checkboxes, Radio Buttons, and Switches</h2>
+        <table class="table table-bordered">
+          <thead class="table-dark">
+            <tr>
+              <th>Attribute</th>
+              <th>Purpose</th>
+              <th>Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>type</code></td>
+              <td>Specifies the input type</td>
+              <td><code>type="checkbox"</code> or <code>type="radio"</code></td>
+            </tr>
+            <tr>
+              <td><code>name</code></td>
+              <td>Form field name (all radio buttons in a group must share this)</td>
+              <td><code>name="preference"</code></td>
+            </tr>
+            <tr>
+              <td><code>id</code></td>
+              <td>Unique identifier for the input element</td>
+              <td><code>id="option1"</code></td>
+            </tr>
+            <tr>
+              <td><code>value</code></td>
+              <td>Value submitted when selected</td>
+              <td><code>value="yes"</code></td>
+            </tr>
+            <tr>
+              <td><code>checked</code></td>
+              <td>Makes the input selected/enabled by default</td>
+              <td><code>checked</code></td>
+            </tr>
+            <tr>
+              <td><code>disabled</code></td>
+              <td>Disables the input element</td>
+              <td><code>disabled</code></td>
+            </tr>
+            <tr>
+              <td><code>for</code> (on label)</td>
+              <td>Associates label with input via input's <code>id</code></td>
+              <td><code>&lt;label for="option1"&gt;</code></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Best Practices -->
+      <section class="mt-5 mb-5">
+        <h2>Best Practices for Checkboxes, Radio Buttons, and Switches</h2>
+        <ul>
+          <li>Always wrap form controls in a <code>.form-check</code> container</li>
+          <li>Always use the <code>.form-check-input</code> and <code>.form-check-label</code> classes</li>
+          <li>Use unique <code>id</code> attributes on all inputs and corresponding <code>for</code> attributes on labels</li>
+          <li>Group related radio buttons by using the same <code>name</code> attribute</li>
+          <li>For multiple selections, use checkboxes; for single selection, use radio buttons</li>
+          <li>Use toggle switches for binary on/off states (e.g., enable/disable a feature)</li>
+          <li>Make sure the clickable area includes both the input and label for better usability</li>
+          <li>Use the <code>checked</code> attribute to show the default state</li>
+          <li>Consider accessibility - ensure proper label associations for screen readers</li>
+          <li>Only disable options when necessary, as it can confuse users</li>
+          <li>Provide clear, descriptive label text that explains what each option does</li>
+          <li>Test on different browsers and devices to ensure consistent appearance</li>
+        </ul>
+      </section>
+
+      <!-- Practical Example -->
+      <section class="mt-5 mb-5">
+        <h2>Practical Example: Form with All Three Types</h2>
+        <form class="border p-4 rounded">
+          <h5>User Preferences Form</h5>
+          
+          <div class="mb-4">
+            <h6>Interests (Select all that apply):</h6>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="interest1" name="interests" value="sports">
+              <label class="form-check-label" for="interest1">Sports</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="interest2" name="interests" value="music">
+              <label class="form-check-label" for="interest2">Music</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="interest3" name="interests" value="reading">
+              <label class="form-check-label" for="interest3">Reading</label>
+            </div>
+          </div>
+
+          <div class="mb-4">
+            <h6>Subscription Plan (Select one):</h6>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="plan" id="plan1" value="free" checked>
+              <label class="form-check-label" for="plan1">Free Plan</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="plan" id="plan2" value="premium">
+              <label class="form-check-label" for="plan2">Premium Plan</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="plan" id="plan3" value="enterprise">
+              <label class="form-check-label" for="plan3">Enterprise Plan</label>
+            </div>
+          </div>
+
+          <div class="mb-4">
+            <h6>Settings:</h6>
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="emailNotifications" name="emailNotifications" checked>
+              <label class="form-check-label" for="emailNotifications">Email Notifications</label>
+            </div>
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="darkMode" name="darkMode">
+              <label class="form-check-label" for="darkMode">Dark Mode</label>
+            </div>
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="twoFactor" name="twoFactor">
+              <label class="form-check-label" for="twoFactor">Two-Factor Authentication</label>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Save Preferences</button>
+        </form>
+      </section>
+    </div>
+  </body>
+</html>
